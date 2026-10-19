@@ -326,10 +326,6 @@ h1 {
   line-height: 1.78;
 }
 
-.section-heading--full p {
-  max-width: none;
-}
-
 .stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));

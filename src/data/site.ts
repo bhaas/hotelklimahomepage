@@ -123,6 +123,7 @@ export const siteContent = {
       footnotes: [
         'Doppelzimmerpreise pro Person und Tag.',
         'Einzelzimmerzuschlag: + € 25,-- pro Tag.',
+        'Übernachtung mit Frühstück entspricht jeweils Halbpension minus € 20,--.',
         'Ortstaxe: + € 4,80 pro Person und Tag.',
         'Kurzaufenthalte von 1 bis 2 Tagen: + € 15,-- pro Person und Tag.',
         'Kinder von 0 bis 3 Jahren: kostenlos im Zimmer der Eltern.',
@@ -299,6 +300,7 @@ export const siteContent = {
       footnotes: [
         'Prices are based on double occupancy.',
         'Single-room supplement: + € 25,-- per day.',
+        'Bed and breakfast is always the half-board rate minus € 20,--.',
         'Visitor tax: + € 4,80 per person per day.',
         'Short stays of 1 to 2 days: + € 15,-- per person per day.',
         'Children from 0 to 3 years: free in the parents’ room.',
@@ -475,6 +477,7 @@ export const siteContent = {
       footnotes: [
         'Prezzi per persona e per giorno in camera doppia.',
         'Supplemento camera singola: + € 25,-- al giorno.',
+        'Il pernottamento con colazione corrisponde sempre alla mezza pensione meno € 20,--.',
         'Tassa di soggiorno: + € 4,80 per persona e per giorno.',
         'Soggiorni brevi da 1 a 2 giorni: + € 15,-- per persona e per giorno.',
         'Bambini da 0 a 3 anni: gratis nella camera dei genitori.',

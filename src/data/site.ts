@@ -121,7 +121,7 @@ export const siteContent = {
         { period: 'Alle übrigen Zeiten', halfBoard: '€ 118,--', bedBreakfast: '€ 98,--' },
       ],
       footnotes: [
-        'Doppelzimmerpreise pro Person und Tag.',
+        'Doppelzimmerpreise pro Person und Tag ohne Ortstaxe.',
         'Einzelzimmerzuschlag: + € 25,-- pro Tag.',
         'Übernachtung mit Frühstück entspricht jeweils Halbpension minus € 20,--.',
         'Ortstaxe: + € 4,80 pro Person und Tag.',
@@ -298,7 +298,7 @@ export const siteContent = {
         { period: 'All other dates', halfBoard: '€ 118,--', bedBreakfast: '€ 98,--' },
       ],
       footnotes: [
-        'Prices are based on double occupancy.',
+        'Double-room prices are per person per day, excluding visitor tax.',
         'Single-room supplement: + € 25,-- per day.',
         'Bed and breakfast is always the half-board rate minus € 20,--.',
         'Visitor tax: + € 4,80 per person per day.',
@@ -475,7 +475,7 @@ export const siteContent = {
         { period: 'Tutti gli altri periodi', halfBoard: '€ 118,--', bedBreakfast: '€ 98,--' },
       ],
       footnotes: [
-        'Prezzi per persona e per giorno in camera doppia.',
+        'Prezzi in camera doppia per persona e per giorno, tassa di soggiorno esclusa.',
         'Supplemento camera singola: + € 25,-- al giorno.',
         'Il pernottamento con colazione corrisponde sempre alla mezza pensione meno € 20,--.',
         'Tassa di soggiorno: + € 4,80 per persona e per giorno.',

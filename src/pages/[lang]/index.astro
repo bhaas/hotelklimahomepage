@@ -1,0 +1,385 @@
+---
+import { Image } from 'astro:assets';
+import MainLayout from '../../layouts/MainLayout.astro';
+import { hotelImages, locales, siteContent, type Locale } from '../../data/site';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({ params: { lang } }));
+}
+
+const lang = Astro.params.lang as Locale;
+const page = siteContent[lang];
+
+if (!page) {
+  throw new Error(`Unsupported language: ${Astro.params.lang}`);
+}
+
+const switcher = locales.map((item) => ({
+  code: item,
+  label: item.toUpperCase(),
+  href: `/${item}/`,
+}));
+
+const sectionIds = {
+  de: {
+    hotel: 'hotel',
+    rooms: 'zimmer',
+    prices: 'preise',
+    taste: 'genuss',
+    region: 'region',
+    contact: 'kontakt',
+  },
+  en: {
+    hotel: 'hotel',
+    rooms: 'rooms',
+    prices: 'prices',
+    taste: 'taste',
+    region: 'region',
+    contact: 'contact',
+  },
+  it: {
+    hotel: 'hotel',
+    rooms: 'camere',
+    prices: 'prezzi',
+    taste: 'gusto',
+    region: 'territorio',
+    contact: 'contatti',
+  },
+} as const;
+
+const ids = sectionIds[lang];
+---
+
+<MainLayout title={page.meta.title} description={page.meta.description} locale={lang}>
+  <div class="page-shell">
+    <div class="site-frame">
+      <header class="site-header">
+        <div class="header-bar">
+          <div class="brand">
+            <span class="brand__name">Hotel Klima</span>
+            <span class="brand__tagline">{page.hero.eyebrow}</span>
+          </div>
+
+          <nav class="nav" aria-label={page.languageName}>
+            {page.nav.map((item) => (
+              <a href={item.href}>{item.label}</a>
+            ))}
+          </nav>
+
+          <div class="language-switcher notranslate" aria-label="Languages" translate="no">
+            {switcher.map((item) => (
+              <a
+                href={item.href}
+                lang={item.code}
+                hreflang={item.code}
+                translate="no"
+                aria-current={item.code === lang ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      <main>
+        <section class:list={['hero', page.hero.imageKey === 'winterPanorama' && 'hero--panorama']}>
+          <div class="hero__media">
+            <Image
+              src={hotelImages[page.hero.imageKey]}
+              alt={page.hero.imageAlt}
+              widths={[960, 1440, 2000]}
+              sizes="100vw"
+              loading="eager"
+              fetchpriority="high"
+            />
+          </div>
+          <div class="hero__overlay"></div>
+          <div class="hero__content">
+            <div class="hero__panel">
+              <span class="eyebrow">{page.hero.eyebrow}</span>
+              <h1>{page.hero.title}</h1>
+              <p class="hero__lead">{page.hero.description}</p>
+              <div class="hero__actions">
+                {page.hero.ctas.map((cta) => (
+                  <a class:list={['button', cta.primary ? 'button--primary' : 'button--secondary']} href={cta.href}>
+                    {cta.label}
+                  </a>
+                ))}
+              </div>
+              <ul class="pill-list">
+                {page.hero.facts.map((fact) => (
+                  <li>{fact}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id={ids.hotel}>
+          <div class="section-card section-card--padded split">
+            <div class="intro-copy">
+              <div class="section-heading">
+                <h2>{page.intro.title}</h2>
+                <p>{page.intro.text}</p>
+              </div>
+
+              <div class="stats">
+                {page.intro.stats.map((stat) => (
+                  <div class="stat">
+                    <span class="stat__value">{stat.value}</span>
+                    <span class="stat__label">{stat.label}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div class="photo-frame">
+              <Image
+                src={hotelImages[page.intro.imageKey]}
+                alt={page.intro.imageAlt}
+                widths={[720, 1080, 1440]}
+                sizes="(max-width: 1080px) 100vw, 45vw"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-heading">
+            <h2>{page.highlights.title}</h2>
+          </div>
+
+          <div class="feature-grid">
+            {page.highlights.items.map((item) => (
+              <article class="card card--padding">
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="section" id={ids.rooms}>
+          <div class="section-card section-card--padded split">
+            <div>
+              <div class="section-heading">
+                <h2>{page.rooms.title}</h2>
+                <p>{page.rooms.text}</p>
+              </div>
+
+              <ul class="check-list">
+                {page.rooms.bullets.map((bullet) => (
+                  <li>{bullet}</li>
+                ))}
+              </ul>
+
+              <div class="info-note">{page.rooms.note}</div>
+            </div>
+
+            <div class="photo-frame">
+              <Image
+                src={hotelImages[page.rooms.imageKey]}
+                alt={page.rooms.imageAlt}
+                widths={[720, 1080, 1600]}
+                sizes="(max-width: 1080px) 100vw, 42vw"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id={ids.prices}>
+          <div class="section-card section-card--padded">
+            <div class="section-heading section-heading--full">
+              <h2>{page.pricing.title}</h2>
+              <p>{page.pricing.intro}</p>
+            </div>
+
+            <div class="table-wrap">
+              <table class="pricing-table">
+                <thead>
+                  <tr>
+                    <th>{page.pricing.columns.period}</th>
+                    <th>{page.pricing.columns.halfBoard}</th>
+                    <th>{page.pricing.columns.bedBreakfast}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {page.pricing.rows.map((row) => (
+                    <tr>
+                      <td>{row.period}</td>
+                      <td>{row.halfBoard}</td>
+                      <td>{row.bedBreakfast}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <ul class="pricing-notes">
+              {page.pricing.footnotes.map((note) => (
+                <li>{note}</li>
+              ))}
+            </ul>
+          </div>
+        </section>
+
+        <section class="section" id={ids.taste}>
+          <div class="section-heading">
+            <h2>{page.experience.title}</h2>
+          </div>
+
+          <div class="experience-grid">
+            {page.experience.cards.map((card) => (
+              <article class="card">
+                <div class="card__media">
+                  <Image
+                    src={hotelImages[card.imageKey]}
+                    alt={card.imageAlt}
+                    widths={[720, 1080, 1440]}
+                    sizes="(max-width: 1080px) 100vw, 48vw"
+                  />
+                </div>
+                <div class="card__body">
+                  <h3>{card.title}</h3>
+                  <p>{card.text}</p>
+                  <ul class="check-list">
+                    {card.bullets.map((bullet) => (
+                      <li>{bullet}</li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section class="section" id={ids.region}>
+          <div class="section-card section-card--padded">
+            <div class="section-heading">
+              <h2>{page.region.title}</h2>
+              <p>{page.region.text}</p>
+            </div>
+
+            <div class="season-grid">
+              {page.region.seasons.map((season) => (
+                <article class="card">
+                  <div class="card__media">
+                    <Image
+                      src={hotelImages[season.imageKey]}
+                      alt={season.imageAlt}
+                      widths={[720, 1080, 1440]}
+                      sizes="(max-width: 1080px) 100vw, 48vw"
+                    />
+                  </div>
+                  <div class="card__body">
+                    <h3>{season.title}</h3>
+                    <ul class="season-list">
+                      {season.bullets.map((bullet) => (
+                        <li>{bullet}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-card section-card--padded">
+            <div class="section-heading">
+              <h2>{page.gallery.title}</h2>
+              <p>{page.gallery.text}</p>
+            </div>
+
+            <div class="gallery-grid">
+              {page.gallery.items.map((item) => (
+                <div class="card">
+                  <div class="card__media">
+                    <Image
+                      src={hotelImages[item.key]}
+                      alt={item.alt}
+                      widths={[520, 720, 960]}
+                      sizes="(max-width: 1080px) 100vw, 30vw"
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="section-card section-card--padded split">
+            <div>
+              <div class="section-heading">
+                <h2>{page.apartment.title}</h2>
+                <p>{page.apartment.text}</p>
+              </div>
+            </div>
+
+            <div class="photo-frame">
+              <Image
+                src={hotelImages[page.apartment.imageKey]}
+                alt={page.apartment.imageAlt}
+                widths={[720, 1080, 1440]}
+                sizes="(max-width: 1080px) 100vw, 45vw"
+              />
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id={ids.contact}>
+          <div class="section-card contact-card">
+            <div class="contact-panel contact-copy">
+              <div class="section-heading">
+                <h2>{page.contact.title}</h2>
+                <p>{page.contact.text}</p>
+              </div>
+
+              <ul class="address-list">
+                {page.contact.addressLines.map((line) => (
+                  <li>{line}</li>
+                ))}
+              </ul>
+
+              <div class="contact-links">
+                <a class="contact-link" href={page.contact.phoneHref}>
+                  {page.contact.phoneLabel}
+                </a>
+                <a class="contact-link" href={page.contact.emailHref}>
+                  {page.contact.emailLabel}
+                </a>
+                <a class="contact-link" href={page.contact.secondaryLink.href} target="_blank" rel="noreferrer">
+                  {page.contact.secondaryLink.label}
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-side">
+              <article class="card">
+                <div class="card__media">
+                  <Image
+                    src={hotelImages.heroWinter}
+                    alt={page.intro.imageAlt}
+                    widths={[720, 1080, 1440]}
+                    sizes="(max-width: 1080px) 100vw, 40vw"
+                  />
+                </div>
+                <div class="card__body">
+                  <h3>Hotel Klima</h3>
+                  <p>{page.footer}</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p>{page.footer}</p>
+      </footer>
+    </div>
+  </div>
+</MainLayout>

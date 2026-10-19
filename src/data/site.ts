@@ -189,14 +189,8 @@ export const siteContent = {
         { key: 'guestRoom' as ImageKey, alt: 'Zimmer im Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Frühstücks- und Buffetangebot im Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Talblick in Neustift' },
+        { key: 'kamplerSee' as ImageKey, alt: 'Stimmungsbild aus der Umgebung im Stubaital' },
       ],
-    },
-    apartment: {
-      title: 'Auch eine Ferienwohnung gehört dazu',
-      text:
-        'Nur etwa fünf Gehminuten vom Hotel entfernt liegt die Ferienwohnung Klima am Eingang des Pinnistals - ruhig, sonnig und ideal für Gäste, die etwas mehr Unabhängigkeit möchten.',
-      imageKey: 'kamplerSee' as ImageKey,
-      imageAlt: 'Landschaft im Stubaital nahe Neustift',
     },
     contact: {
       title: 'Direkt anfragen',
@@ -371,14 +365,8 @@ export const siteContent = {
         { key: 'guestRoom' as ImageKey, alt: 'Guest room at Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Breakfast and buffet offering at Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Valley view in Neustift' },
+        { key: 'kamplerSee' as ImageKey, alt: 'Scenic view from the Stubai Valley surroundings' },
       ],
-    },
-    apartment: {
-      title: 'There is also a holiday apartment',
-      text:
-        'Around five minutes from the hotel, the Klima apartment near the entrance to the Pinnistal offers a sunny, quiet alternative for guests who prefer more independence.',
-      imageKey: 'kamplerSee' as ImageKey,
-      imageAlt: 'Landscape in the Stubai Valley near Neustift',
     },
     contact: {
       title: 'Book directly',
@@ -553,14 +541,8 @@ export const siteContent = {
         { key: 'guestRoom' as ImageKey, alt: 'Camera dell Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Offerta buffet dell Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Vista sulla valle a Neustift' },
+        { key: 'kamplerSee' as ImageKey, alt: 'Veduta suggestiva dei dintorni della Val Stubai' },
       ],
-    },
-    apartment: {
-      title: 'Disponibile anche un appartamento',
-      text:
-        'A circa cinque minuti dall hotel, l appartamento Klima all ingresso del Pinnistal offre un alternativa tranquilla e soleggiata per chi desidera piu indipendenza.',
-      imageKey: 'kamplerSee' as ImageKey,
-      imageAlt: 'Paesaggio della Val Stubai vicino a Neustift',
     },
     contact: {
       title: 'Richiedi direttamente',

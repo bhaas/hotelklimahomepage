@@ -310,26 +310,6 @@ const ids = sectionIds[lang];
           </div>
         </section>
 
-        <section class="section">
-          <div class="section-card section-card--padded split">
-            <div>
-              <div class="section-heading">
-                <h2>{page.apartment.title}</h2>
-                <p>{page.apartment.text}</p>
-              </div>
-            </div>
-
-            <div class="photo-frame">
-              <Image
-                src={hotelImages[page.apartment.imageKey]}
-                alt={page.apartment.imageAlt}
-                widths={[720, 1080, 1440]}
-                sizes="(max-width: 1080px) 100vw, 45vw"
-              />
-            </div>
-          </div>
-        </section>
-
         <section class="section" id={ids.contact}>
           <div class="section-card contact-card">
             <div class="contact-panel contact-copy">

@@ -351,6 +351,27 @@ const ids = sectionIds[lang];
                   <p>{page.footer}</p>
                 </div>
               </article>
+
+              <article class="card">
+                <div class="map-embed">
+                  <iframe
+                    src={page.contact.map.embedSrc}
+                    title={page.contact.map.embedTitle}
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+                <div class="card__body">
+                  <h3>{page.contact.map.title}</h3>
+                  <p>{page.contact.map.text}</p>
+                  <div class="contact-links">
+                    <a class="contact-link" href={page.contact.map.href} target="_blank" rel="noreferrer">
+                      {page.contact.map.linkLabel}
+                    </a>
+                  </div>
+                </div>
+              </article>
             </div>
           </div>
         </section>

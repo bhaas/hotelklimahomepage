@@ -10,6 +10,7 @@ import valleyView from '../assets/hotel/15-valley-view-16x9.jpg';
 import summerMeadow from '../assets/hotel/16-summer-meadow.jpg';
 import kamplerSee from '../assets/hotel/17-location-kampler-see-16x9.jpg';
 import stubaiWinter from '../assets/hotel/18-location-stubai-winter.jpg';
+import playroom from '../assets/hotel/19-playroom.jpg';
 
 export const hotelImages = {
   heroWinter,
@@ -24,9 +25,15 @@ export const hotelImages = {
   summerMeadow,
   kamplerSee,
   stubaiWinter,
+  playroom,
 } as const;
 
 export type ImageKey = keyof typeof hotelImages;
+
+const googleMapsDirectionsUrl =
+  'https://www.google.com/maps/dir/?api=1&destination=Pinnisweg+53,+6167+Neustift+im+Stubaital,+Austria';
+const googleMapsEmbedUrl =
+  'https://www.google.com/maps?q=Pinnisweg%2053%2C%206167%20Neustift%20im%20Stubaital%2C%20Austria&z=15&output=embed';
 
 export const siteContent = {
   de: {
@@ -191,6 +198,7 @@ export const siteContent = {
         { key: 'breakfastBuffet' as ImageKey, alt: 'Frühstücks- und Buffetangebot im Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Talblick in Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Stimmungsbild aus der Umgebung im Stubaital' },
+        { key: 'playroom' as ImageKey, alt: 'Spieleraum im Hotel Klima' },
       ],
     },
     contact: {
@@ -203,6 +211,14 @@ export const siteContent = {
       emailLabel: 'haas@hotel-klima.com',
       emailHref: 'mailto:haas@hotel-klima.com',
       secondaryLink: { href: 'https://www.hotel-klima.com/', label: 'Bisherige Website ansehen' },
+      map: {
+        title: 'Anreise & Karte',
+        text: 'Mit einem Klick öffnet sich die Route direkt in Google Maps. So können Gäste die Anfahrt sofort planen.',
+        embedTitle: 'Google Maps Karte für Hotel Klima',
+        linkLabel: 'Route in Google Maps öffnen',
+        href: googleMapsDirectionsUrl,
+        embedSrc: googleMapsEmbedUrl,
+      },
     },
     footer: 'Entwurf einer modernen, mehrsprachigen Homepage auf Basis der bestehenden Inhalte und Fotos.',
   },
@@ -368,6 +384,7 @@ export const siteContent = {
         { key: 'breakfastBuffet' as ImageKey, alt: 'Breakfast and buffet offering at Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Valley view in Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Scenic view from the Stubai Valley surroundings' },
+        { key: 'playroom' as ImageKey, alt: 'Games room at Hotel Klima' },
       ],
     },
     contact: {
@@ -380,6 +397,14 @@ export const siteContent = {
       emailLabel: 'haas@hotel-klima.com',
       emailHref: 'mailto:haas@hotel-klima.com',
       secondaryLink: { href: 'https://www.hotel-klima.com/', label: 'View the current website' },
+      map: {
+        title: 'Arrival & map',
+        text: 'Guests can open the exact route in Google Maps with one click and plan the drive immediately.',
+        embedTitle: 'Google Maps location for Hotel Klima',
+        linkLabel: 'Open directions in Google Maps',
+        href: googleMapsDirectionsUrl,
+        embedSrc: googleMapsEmbedUrl,
+      },
     },
     footer: 'Modern multilingual homepage concept created from the existing hotel content and photo archive.',
   },
@@ -545,6 +570,7 @@ export const siteContent = {
         { key: 'breakfastBuffet' as ImageKey, alt: 'Offerta buffet dell Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Vista sulla valle a Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Veduta suggestiva dei dintorni della Val Stubai' },
+        { key: 'playroom' as ImageKey, alt: 'Sala giochi dell Hotel Klima' },
       ],
     },
     contact: {
@@ -557,6 +583,14 @@ export const siteContent = {
       emailLabel: 'haas@hotel-klima.com',
       emailHref: 'mailto:haas@hotel-klima.com',
       secondaryLink: { href: 'https://www.hotel-klima.com/', label: 'Vedi il sito attuale' },
+      map: {
+        title: 'Arrivo e mappa',
+        text: 'Con un clic gli ospiti possono aprire il percorso esatto in Google Maps e pianificare subito l arrivo.',
+        embedTitle: 'Mappa Google Maps per Hotel Klima',
+        linkLabel: 'Apri il percorso in Google Maps',
+        href: googleMapsDirectionsUrl,
+        embedSrc: googleMapsEmbedUrl,
+      },
     },
     footer: 'Concept di homepage moderna e multilingue creato dai contenuti esistenti e dall archivio fotografico dell hotel.',
   },

@@ -282,6 +282,27 @@ const ids = sectionIds[lang];
                 </article>
               ))}
             </div>
+
+            <a class="elfer-tip" href={page.region.elferTip.href} target="_blank" rel="noreferrer">
+              <div class="elfer-tip__images">
+                {page.region.elferTip.images.map((image) => (
+                  <div class="elfer-tip__image">
+                    <Image
+                      src={hotelImages[image.key]}
+                      alt={image.alt}
+                      widths={[720, 1080, 1440]}
+                      sizes="(max-width: 1080px) 100vw, 45vw"
+                    />
+                  </div>
+                ))}
+              </div>
+              <div class="elfer-tip__content">
+                <span class="elfer-tip__label">{page.region.elferTip.label}</span>
+                <h3>{page.region.elferTip.title}</h3>
+                <p>{page.region.elferTip.text}</p>
+                <span class="elfer-tip__link">{page.region.elferTip.linkLabel} <span aria-hidden="true">↗</span></span>
+              </div>
+            </a>
           </div>
         </section>
 
@@ -348,7 +369,6 @@ const ids = sectionIds[lang];
                 </div>
                 <div class="card__body">
                   <h3>Hotel Klima</h3>
-                  <p>{page.footer}</p>
                 </div>
               </article>
 
@@ -376,10 +396,6 @@ const ids = sectionIds[lang];
           </div>
         </section>
       </main>
-
-      <footer class="footer">
-        <p>{page.footer}</p>
-      </footer>
     </div>
   </div>
 </MainLayout>

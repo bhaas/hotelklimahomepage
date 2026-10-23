@@ -11,6 +11,8 @@ import summerMeadow from '../assets/hotel/16-summer-meadow.jpg';
 import kamplerSee from '../assets/hotel/17-location-kampler-see-16x9.jpg';
 import stubaiWinter from '../assets/hotel/18-location-stubai-winter.jpg';
 import playroom from '../assets/hotel/19-playroom.jpg';
+import elferhuetteWinter from '../assets/hotel/20-elferhuette-winter.jpg';
+import elferhuetteClouds from '../assets/hotel/21-elferhuette-clouds.jpg';
 
 export const hotelImages = {
   heroWinter,
@@ -26,6 +28,8 @@ export const hotelImages = {
   kamplerSee,
   stubaiWinter,
   playroom,
+  elferhuetteWinter,
+  elferhuetteClouds,
 } as const;
 
 export type ImageKey = keyof typeof hotelImages;
@@ -75,6 +79,7 @@ export const siteContent = {
       stats: [
         { value: '50+ Jahre', label: 'Gastfreundschaft mit Geschichte' },
         { value: '20 km', label: 'bis zum Flughafen Innsbruck' },
+        { value: 'E-Auto', label: 'Ladestation direkt am Hotel' },
       ],
       imageKey: 'heroWinter' as ImageKey,
       imageAlt: 'Winteransicht des Hotel Klima',
@@ -184,6 +189,18 @@ export const siteContent = {
           imageAlt: 'Winterpanorama im Stubaital',
         },
       ],
+      elferTip: {
+        label: 'Ausflugstipp',
+        title: 'Elferhütte - Panorama über dem Stubaital',
+        text:
+          'Ein besonderer Aussichtspunkt für Wanderer, Winterwanderer und Genießer: Die Elferhütte liegt hoch über Neustift und begeistert mit Weitblick, Sonnenterrasse und echter Hüttenatmosphäre.',
+        linkLabel: 'Elferhütte entdecken',
+        href: 'https://www.elferhuette.at/',
+        images: [
+          { key: 'elferhuetteWinter' as ImageKey, alt: 'Elferhütte in verschneiter Berglandschaft' },
+          { key: 'elferhuetteClouds' as ImageKey, alt: 'Elferhütte über dem Wolkenmeer' },
+        ],
+      },
     },
     gallery: {
       title: 'Bildstimmung des Hauses',
@@ -220,7 +237,6 @@ export const siteContent = {
         embedSrc: googleMapsEmbedUrl,
       },
     },
-    footer: 'Entwurf einer modernen, mehrsprachigen Homepage auf Basis der bestehenden Inhalte und Fotos.',
   },
   en: {
     languageName: 'English',
@@ -261,6 +277,7 @@ export const siteContent = {
       stats: [
         { value: '50+ years', label: 'of family hospitality' },
         { value: '20 km', label: 'to Innsbruck airport' },
+        { value: 'EV', label: 'charging station directly at the hotel' },
       ],
       imageKey: 'heroWinter' as ImageKey,
       imageAlt: 'Winter view of Hotel Klima',
@@ -370,6 +387,18 @@ export const siteContent = {
           imageAlt: 'Winter panorama of the Stubai Valley',
         },
       ],
+      elferTip: {
+        label: 'Local tip',
+        title: 'Elferhütte - panoramic views above the Stubai Valley',
+        text:
+          'A special destination for hikers, winter walkers and mountain lovers: high above Neustift, Elferhütte combines expansive views, a sunny terrace and an authentic alpine atmosphere.',
+        linkLabel: 'Discover Elferhütte',
+        href: 'https://www.elferhuette.at/',
+        images: [
+          { key: 'elferhuetteWinter' as ImageKey, alt: 'Elferhütte in a snowy mountain setting' },
+          { key: 'elferhuetteClouds' as ImageKey, alt: 'Elferhütte above a sea of clouds' },
+        ],
+      },
     },
     gallery: {
       title: 'Photo direction for the new site',
@@ -406,7 +435,6 @@ export const siteContent = {
         embedSrc: googleMapsEmbedUrl,
       },
     },
-    footer: 'Modern multilingual homepage concept created from the existing hotel content and photo archive.',
   },
   it: {
     languageName: 'Italiano',
@@ -447,6 +475,7 @@ export const siteContent = {
       stats: [
         { value: '50+ anni', label: 'di ospitalita familiare' },
         { value: '20 km', label: 'dall aeroporto di Innsbruck' },
+        { value: 'Auto elettrica', label: 'stazione di ricarica direttamente in hotel' },
       ],
       imageKey: 'heroWinter' as ImageKey,
       imageAlt: 'Vista invernale dell Hotel Klima',
@@ -556,6 +585,18 @@ export const siteContent = {
           imageAlt: 'Panorama invernale della Val Stubai',
         },
       ],
+      elferTip: {
+        label: 'Consiglio locale',
+        title: 'Elferhütte - panorama sopra la Val Stubai',
+        text:
+          'Una meta speciale per escursionisti, camminatori invernali e amanti della montagna: in alto sopra Neustift, la Elferhütte unisce viste sconfinate, terrazza soleggiata e autentica atmosfera alpina.',
+        linkLabel: 'Scopri la Elferhütte',
+        href: 'https://www.elferhuette.at/',
+        images: [
+          { key: 'elferhuetteWinter' as ImageKey, alt: 'Elferhütte in un paesaggio montano innevato' },
+          { key: 'elferhuetteClouds' as ImageKey, alt: 'Elferhütte sopra un mare di nuvole' },
+        ],
+      },
     },
     gallery: {
       title: 'Direzione visiva del nuovo sito',
@@ -592,7 +633,6 @@ export const siteContent = {
         embedSrc: googleMapsEmbedUrl,
       },
     },
-    footer: 'Concept di homepage moderna e multilingue creato dai contenuti esistenti e dall archivio fotografico dell hotel.',
   },
 } as const;
 

@@ -388,6 +388,78 @@ h1 {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.elfer-tip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 18px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.elfer-tip:hover,
+.elfer-tip:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 35px rgba(15, 32, 29, 0.12);
+}
+
+.elfer-tip__images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 310px;
+  background: #d6dfdc;
+}
+
+.elfer-tip__image {
+  overflow: hidden;
+}
+
+.elfer-tip__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.elfer-tip__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 32px;
+}
+
+.elfer-tip__label {
+  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-soft);
+  color: var(--brand-strong);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+
+.elfer-tip h3 {
+  margin-top: 16px;
+  font-size: clamp(1.55rem, 2.5vw, 2.2rem);
+}
+
+.elfer-tip p {
+  margin: 16px 0 0;
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+.elfer-tip__link {
+  display: inline-flex;
+  margin-top: 22px;
+  color: var(--brand);
+  font-weight: 700;
+}
+
 .card {
   overflow: hidden;
   border: 1px solid var(--line);
@@ -603,6 +675,7 @@ h1 {
   .experience-grid,
   .season-grid,
   .gallery-grid,
+  .elfer-tip,
   .stats {
     grid-template-columns: 1fr;
   }

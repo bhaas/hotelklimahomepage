@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 200" width="520" height="200">
+  <g transform="translate(20 20)">
+    <circle cx="80" cy="80" r="76" fill="none" stroke="#1f4b44" stroke-width="5"/>
+    <path d="M18 122 L62 62 L82 88 L104 52 L142 122 Z" fill="#1f4b44"/>
+    <path d="M96 64 L104 52 L113 67 L106 63 L100 69 Z" fill="#f6f2eb"/>
+    <path d="M55 72 L62 62 L69 72 L64 70 L60 74 Z" fill="#f6f2eb"/>
+    <circle cx="116" cy="40" r="10" fill="#b9824f"/>
+  </g>
+  <text x="200" y="102" font-family="Georgia, 'Times New Roman', serif" font-size="58" letter-spacing="4" fill="#1f4b44">KLIMA</text>
+  <text x="203" y="134" font-family="'Segoe UI', Arial, sans-serif" font-size="17" letter-spacing="7" fill="#b9824f">HOTEL · STUBAITAL</text>
+</svg>

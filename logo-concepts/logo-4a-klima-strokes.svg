@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 170" width="460" height="170">
+  <g stroke-linecap="round" stroke-width="12">
+    <path d="M36 54 V110" stroke="#1f4b44"/>
+    <path d="M41 86 L78 54" stroke="#1f4b44"/>
+    <path d="M52 76 L82 110" stroke="#b9824f"/>
+  </g>
+  <text x="96" y="116" font-family="'Segoe UI', Arial, sans-serif" font-weight="700" font-size="80" letter-spacing="10" fill="#1f4b44">LIMA</text>
+  <rect x="32" y="136" width="44" height="3" fill="#b9824f"/>
+  <text x="88" y="144" font-family="'Segoe UI', Arial, sans-serif" font-size="16" letter-spacing="6" fill="#56635f">HOTEL · STUBAITAL</text>
+</svg>

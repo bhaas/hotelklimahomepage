@@ -55,10 +55,9 @@ const ids = sectionIds[lang];
     <div class="site-frame">
       <header class="site-header">
         <div class="header-bar">
-          <div class="brand">
-            <span class="brand__name">Hotel Klima</span>
-            <span class="brand__tagline">{page.hero.eyebrow}</span>
-          </div>
+          <a class="brand" href={`/${lang}/`} translate="no">
+            <img class="brand__logo" src="/logo-klima.svg" alt="Hotel Klima – Hotel · Stubaital" width="362" height="125" />
+          </a>
 
           <nav class="nav" aria-label={page.languageName}>
             {page.nav.map((item) => (

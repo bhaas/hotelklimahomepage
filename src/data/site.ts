@@ -43,9 +43,9 @@ export const siteContent = {
   de: {
     languageName: 'Deutsch',
     meta: {
-      title: 'Hotel Klima - Ferienoase im Stubaital',
+      title: 'Hotel Klima Neustift – Familienhotel im Stubaital, Tirol',
       description:
-        'Neue mehrsprachige Homepage für Hotel Klima: sonnige Ruhelage, persönliche Gastfreundschaft, Stubai-Erlebnisse und Wohlfühlurlaub in Neustift-Neder.',
+        'Familiengeführtes Hotel in Neustift im Stubaital, Tirol: ruhige Sonnenlage, Halbpension, Sauna & Dampfbad, Skibus vor der Tür und E-Ladestation. Direkt buchen.',
     },
     nav: [
       { href: '#hotel', label: 'Hotel' },
@@ -203,11 +203,11 @@ export const siteContent = {
       },
     },
     gallery: {
-      title: 'Bildstimmung des Hauses',
+      title: 'Eindrücke vom Hotel Klima',
       text:
-        'Für diesen Entwurf wurden vorhandene Hotelbilder neu kuratiert und bereits sanft überarbeitet, damit das Haus moderner und klarer wirkt als auf der bisherigen Website.',
+        'Ein Blick auf Haus, Zimmer, Kulinarik und die Landschaft rund um Neustift im Stubaital – im Sommer wie im Winter.',
       items: [
-        { key: 'heroWinter' as ImageKey, alt: 'Bisheriges Winter-Hauptfoto des Hotel Klima' },
+        { key: 'heroWinter' as ImageKey, alt: 'Hotel Klima in Neustift im Stubaital im Winter' },
         { key: 'heroSummer' as ImageKey, alt: 'Sommerfassade des Hotel Klima' },
         { key: 'aerialSummer' as ImageKey, alt: 'Hotel Klima aus sommerlicher Perspektive' },
         { key: 'winterPanorama' as ImageKey, alt: 'Panorama des Hotels im Winter' },
@@ -227,7 +227,6 @@ export const siteContent = {
       phoneHref: 'tel:+4352262526',
       emailLabel: 'haas@hotel-klima.com',
       emailHref: 'mailto:haas@hotel-klima.com',
-      secondaryLink: { href: 'https://www.hotel-klima.com/', label: 'Bisherige Website ansehen' },
       map: {
         title: 'Anreise & Karte',
         text: 'Mit einem Klick öffnet sich die Route direkt in Google Maps. So können Gäste die Anfahrt sofort planen.',
@@ -241,9 +240,9 @@ export const siteContent = {
   en: {
     languageName: 'English',
     meta: {
-      title: 'Hotel Klima - Alpine retreat in the Stubai Valley',
+      title: 'Hotel Klima Neustift – Family-run hotel in the Stubai Valley, Tyrol',
       description:
-        'Multilingual homepage concept for Hotel Klima: quiet sunny setting, family hospitality, Stubai mountain adventures and relaxed stays in Neustift-Neder.',
+        'Family-run hotel in Neustift im Stubaital, Tyrol: quiet sunny location, half board, sauna & steam bath, ski bus stop opposite and EV charging. Book direct.',
     },
     nav: [
       { href: '#hotel', label: 'Hotel' },
@@ -401,11 +400,11 @@ export const siteContent = {
       },
     },
     gallery: {
-      title: 'Photo direction for the new site',
+      title: 'Impressions of Hotel Klima',
       text:
-        'This homepage concept uses selected hotel photos that were already gently reworked to reduce the dated look and present the property with a cleaner, more current mood.',
+        'A look at the hotel, rooms, food and the landscape around Neustift in the Stubai Valley – in summer and in winter.',
       items: [
-        { key: 'heroWinter' as ImageKey, alt: 'Current winter facade hero photo of Hotel Klima' },
+        { key: 'heroWinter' as ImageKey, alt: 'Hotel Klima in Neustift in the Stubai Valley in winter' },
         { key: 'heroSummer' as ImageKey, alt: 'Summer exterior of Hotel Klima' },
         { key: 'aerialSummer' as ImageKey, alt: 'Hotel Klima from a summer viewpoint' },
         { key: 'winterPanorama' as ImageKey, alt: 'Hotel panorama in winter' },
@@ -425,7 +424,6 @@ export const siteContent = {
       phoneHref: 'tel:+4352262526',
       emailLabel: 'haas@hotel-klima.com',
       emailHref: 'mailto:haas@hotel-klima.com',
-      secondaryLink: { href: 'https://www.hotel-klima.com/', label: 'View the current website' },
       map: {
         title: 'Arrival & map',
         text: 'Guests can open the exact route in Google Maps with one click and plan the drive immediately.',
@@ -439,9 +437,9 @@ export const siteContent = {
   it: {
     languageName: 'Italiano',
     meta: {
-      title: 'Hotel Klima - Rifugio alpino in Val Stubai',
+      title: 'Hotel Klima Neustift – Hotel a conduzione familiare in Val Stubai',
       description:
-        "Concept multilingue per Hotel Klima: posizione tranquilla e soleggiata, ospitalita familiare, esperienze in montagna e soggiorni rilassanti a Neustift-Neder.",
+        'Hotel a conduzione familiare a Neustift in Val Stubai, Tirolo: posizione tranquilla e soleggiata, mezza pensione, sauna, skibus di fronte e ricarica per auto elettriche.',
     },
     nav: [
       { href: '#hotel', label: 'Hotel' },
@@ -462,34 +460,34 @@ export const siteContent = {
       ],
       facts: [
         'da € 93,-- a persona con mezza pensione',
-        'Wi-Fi in fibra gratuito in tutto l hotel',
+        'Wi-Fi in fibra gratuito in tutto l’hotel',
         'fermata skibus proprio di fronte',
       ],
       imageKey: 'winterPanorama' as ImageKey,
-      imageAlt: 'Panorama invernale dell Hotel Klima da una prospettiva rialzata',
+      imageAlt: 'Panorama invernale dell’Hotel Klima da una prospettiva rialzata',
     },
     intro: {
       title: "Una tradizione che oggi si presenta al meglio",
       text:
         'Da oltre 50 anni Hotel Klima accoglie gli ospiti per vacanze rilassanti in Val Stubai. La famiglia Haas segue la casa personalmente e continua a investire in rinnovi, manutenzione e comfort come colonnina per auto elettriche e Wi-Fi veloce.',
       stats: [
-        { value: '50+ anni', label: 'di ospitalita familiare' },
-        { value: '20 km', label: 'dall aeroporto di Innsbruck' },
+        { value: '50+ anni', label: 'di ospitalità familiare' },
+        { value: '20 km', label: 'dall’aeroporto di Innsbruck' },
         { value: 'Auto elettrica', label: 'stazione di ricarica direttamente in hotel' },
       ],
       imageKey: 'heroWinter' as ImageKey,
-      imageAlt: 'Vista invernale dell Hotel Klima',
+      imageAlt: 'Vista invernale dell’Hotel Klima',
     },
     highlights: {
-      title: 'Perche scegliere Hotel Klima',
+      title: 'Perché scegliere Hotel Klima',
       items: [
         {
           title: 'Posizione tranquilla e soleggiata',
-          text: 'Vista aperta sulla valle, atmosfera distesa e una posizione che unisce tranquillita e comodita.',
+          text: 'Vista aperta sulla valle, atmosfera distesa e una posizione che unisce tranquillità e comodità.',
         },
         {
           title: 'Cucina con carattere',
-          text: 'Buffet della colazione, menu serali a piu portate e ingredienti freschi regionali e internazionali.',
+          text: 'Buffet della colazione, menu serali a più portate e ingredienti freschi regionali e internazionali.',
         },
         {
           title: 'Vacanza attiva in ogni stagione',
@@ -500,17 +498,17 @@ export const siteContent = {
     rooms: {
       title: 'Camere pensate per stare bene',
       text:
-        'Le camere uniscono calore tirolese e comfort pratico. Pavimenti, lavabi e diversi dettagli tecnici sono gia stati rinnovati per rendere il soggiorno piu piacevole.',
+        'Le camere uniscono calore tirolese e comfort pratico. Pavimenti, lavabi e diversi dettagli tecnici sono già stati rinnovati per rendere il soggiorno più piacevole.',
       bullets: [
         'bagno o doccia, WC e balcone',
         'TV LED, telefono e Wi-Fi gratuito',
         'molto legno, materiali caldi e belle viste sulle montagne',
-        'hotel non fumatori con possibilita di fumare all esterno o sul balcone',
+        'hotel non fumatori con possibilità di fumare all’esterno o sul balcone',
       ],
       note:
         'Secondo il listino attuale, la camera doppia con mezza pensione parte da € 93,-- a persona al giorno, tassa di soggiorno di € 4,80 esclusa.',
       imageKey: 'guestRoom' as ImageKey,
-      imageAlt: 'Camera rinnovata dell Hotel Klima',
+      imageAlt: 'Camera rinnovata dell’Hotel Klima',
     },
     pricing: {
       title: 'Prezzi camere',
@@ -544,18 +542,18 @@ export const siteContent = {
         {
           title: 'Sale da pranzo in stile tirolese',
           text:
-            'Dalla colazione alla cena, la stube tradizionale, il giardino d inverno e l area buffet creano un ambiente caldo e personale.',
-          bullets: ['buffet della colazione', 'mezza pensione disponibile', 'serate a tema durante l anno'],
+            'Dalla colazione alla cena, la stube tradizionale, il giardino d’inverno e l’area buffet creano un ambiente caldo e personale.',
+          bullets: ['buffet della colazione', 'mezza pensione disponibile', 'serate a tema durante l’anno'],
           imageKey: 'diningStube' as ImageKey,
-          imageAlt: 'Stube tradizionale dell Hotel Klima',
+          imageAlt: 'Stube tradizionale dell’Hotel Klima',
         },
         {
           title: 'Wellness dopo la montagna',
           text:
-            'L area wellness e pensata per recuperare dopo escursioni o sci, con sauna, bagno turco, cabina a infrarossi e zona relax.',
+            'L’area wellness è pensata per recuperare dopo escursioni o sci, con sauna, bagno turco, cabina a infrarossi e zona relax.',
           bullets: ['sauna e bagno turco', 'cabina a infrarossi e sala relax', 'vasca idromassaggio e massaggi su richiesta'],
           imageKey: 'winterGarden' as ImageKey,
-          imageAlt: 'Giardino d inverno con vista montagna all Hotel Klima',
+          imageAlt: 'Giardino d’inverno con vista montagna all’Hotel Klima',
         },
       ],
     },
@@ -572,13 +570,13 @@ export const siteContent = {
             'Kampler See, punti soleggiati e gite giornaliere facili',
           ],
           imageKey: 'summerMeadow' as ImageKey,
-          imageAlt: 'Prato estivo vicino all Hotel Klima',
+          imageAlt: 'Prato estivo vicino all’Hotel Klima',
         },
         {
           title: 'Inverno',
           bullets: [
             'comodo accesso allo Stubai Gletscher, Elfer, Schlick 2000 e Mieders',
-            'fermata skibus gratuita proprio davanti all hotel',
+            'fermata skibus gratuita proprio davanti all’hotel',
             'due piste da slittino di 8 km, passeggiate invernali e ciaspolate',
           ],
           imageKey: 'stubaiWinter' as ImageKey,
@@ -599,34 +597,33 @@ export const siteContent = {
       },
     },
     gallery: {
-      title: 'Direzione visiva del nuovo sito',
+      title: 'Impressioni dell’Hotel Klima',
       text:
-        'Questo concept usa fotografie dell hotel gia selezionate e leggermente rielaborate per ridurre l effetto datato e mostrare la struttura in modo piu pulito e attuale.',
+        'Uno sguardo all’hotel, alle camere, alla cucina e al paesaggio intorno a Neustift in Val Stubai – d’estate e d’inverno.',
       items: [
-        { key: 'heroWinter' as ImageKey, alt: 'Attuale foto principale invernale della facciata dell Hotel Klima' },
-        { key: 'heroSummer' as ImageKey, alt: 'Esterno estivo dell Hotel Klima' },
+        { key: 'heroWinter' as ImageKey, alt: 'Hotel Klima a Neustift in Val Stubai d’inverno' },
+        { key: 'heroSummer' as ImageKey, alt: 'Esterno estivo dell’Hotel Klima' },
         { key: 'aerialSummer' as ImageKey, alt: 'Hotel Klima in una vista estiva' },
-        { key: 'winterPanorama' as ImageKey, alt: 'Panorama dell hotel in inverno' },
-        { key: 'guestRoom' as ImageKey, alt: 'Camera dell Hotel Klima' },
-        { key: 'breakfastBuffet' as ImageKey, alt: 'Offerta buffet dell Hotel Klima' },
+        { key: 'winterPanorama' as ImageKey, alt: 'Panorama dell’hotel in inverno' },
+        { key: 'guestRoom' as ImageKey, alt: 'Camera dell’Hotel Klima' },
+        { key: 'breakfastBuffet' as ImageKey, alt: 'Offerta buffet dell’Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Vista sulla valle a Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Veduta suggestiva dei dintorni della Val Stubai' },
-        { key: 'playroom' as ImageKey, alt: 'Sala giochi dell Hotel Klima' },
+        { key: 'playroom' as ImageKey, alt: 'Sala giochi dell’Hotel Klima' },
       ],
     },
     contact: {
       title: 'Richiedi direttamente',
       text:
-        'La famiglia Haas segue personalmente le richieste ogni giorno, cosi il primo contatto risulta gia diretto e accogliente come il soggiorno.',
+        'La famiglia Haas segue personalmente le richieste ogni giorno, così il primo contatto risulta già diretto e accogliente come il soggiorno.',
       addressLines: ['Hotel Klima Ferienoase', 'Famiglia Haas', 'Pinnisweg 53', 'A-6167 Neustift-Neder, Tirolo'],
       phoneLabel: '+43 (0)5226 2526',
       phoneHref: 'tel:+4352262526',
       emailLabel: 'haas@hotel-klima.com',
       emailHref: 'mailto:haas@hotel-klima.com',
-      secondaryLink: { href: 'https://www.hotel-klima.com/', label: 'Vedi il sito attuale' },
       map: {
         title: 'Arrivo e mappa',
-        text: 'Con un clic gli ospiti possono aprire il percorso esatto in Google Maps e pianificare subito l arrivo.',
+        text: 'Con un clic gli ospiti possono aprire il percorso esatto in Google Maps e pianificare subito l’arrivo.',
         embedTitle: 'Mappa Google Maps per Hotel Klima',
         linkLabel: 'Apri il percorso in Google Maps',
         href: googleMapsDirectionsUrl,

@@ -5,9 +5,17 @@ interface Props {
   title: string;
   description: string;
   locale: string;
+  alternates?: { lang: string; path: string }[];
+  ogImage?: string;
+  ogLocale?: string;
+  structuredData?: Record<string, unknown>;
 }
 
-const { title, description, locale } = Astro.props;
+const { title, description, locale, alternates = [], ogImage, ogLocale, structuredData } = Astro.props;
+const site = Astro.site ?? new URL(Astro.url.origin);
+const canonical = new URL(Astro.url.pathname, site).href;
+const absolute = (path: string) => new URL(path, site).href;
+const defaultAlternate = alternates.find((item) => item.lang === 'de');
 ---
 
 <!doctype html>
@@ -16,13 +24,34 @@ const { title, description, locale } = Astro.props;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href={canonical} />
+    {alternates.map((item) => <link rel="alternate" hreflang={item.lang} href={absolute(item.path)} />)}
+    {defaultAlternate && <link rel="alternate" hreflang="x-default" href={absolute(defaultAlternate.path)} />}
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Hotel Klima" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    {ogLocale && <meta property="og:locale" content={ogLocale} />}
+    {ogImage && <meta property="og:image" content={absolute(ogImage)} />}
+    {ogImage && <meta property="og:image:width" content="1200" />}
+    {ogImage && <meta property="og:image:height" content="630" />}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    {ogImage && <meta name="twitter:image" content={absolute(ogImage)} />}
+
     <meta name="theme-color" content="#1f4b44" />
     <meta name="google" content="notranslate" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-    <title>{title}</title>
+    {structuredData && <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />}
   </head>
   <body>
     <slot />

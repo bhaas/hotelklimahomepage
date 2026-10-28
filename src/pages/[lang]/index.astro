@@ -1,5 +1,5 @@
 ---
-import { Image } from 'astro:assets';
+import { Image, getImage } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
 import { hotelImages, locales, siteContent, type Locale } from '../../data/site';
 
@@ -48,9 +48,73 @@ const sectionIds = {
 } as const;
 
 const ids = sectionIds[lang];
+
+const hreflangCodes = { de: 'de', en: 'en', it: 'it' } as const;
+const ogLocales = { de: 'de_AT', en: 'en_GB', it: 'it_IT' } as const;
+const alternates = locales.map((item) => ({ lang: hreflangCodes[item], path: `/${item}/` }));
+
+const ogImage = await getImage({
+  src: hotelImages.winterPanorama,
+  width: 1200,
+  height: 630,
+  fit: 'cover',
+  format: 'jpg',
+});
+
+const site = Astro.site ?? new URL(Astro.url.origin);
+const pageUrl = new URL(`/${lang}/`, site).href;
+const lowestHalfBoard = Math.min(
+  ...page.pricing.rows.map((row) => Number(row.halfBoard.replace(/[^\d]/g, ''))),
+);
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Hotel',
+  '@id': new URL('/#hotel', site).href,
+  name: 'Hotel Klima',
+  alternateName: 'Hotel Klima Ferienoase',
+  url: pageUrl,
+  description: page.meta.description,
+  inLanguage: lang,
+  logo: new URL('/logo-klima-512.png', site).href,
+  image: [new URL(ogImage.src, site).href],
+  telephone: '+43 5226 2526',
+  email: 'haas@hotel-klima.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Pinnisweg 53',
+    postalCode: '6167',
+    addressLocality: 'Neustift im Stubaital',
+    addressRegion: 'Tirol',
+    addressCountry: 'AT',
+  },
+  hasMap: page.contact.map.href,
+  priceRange: `ab € ${lowestHalfBoard} p. P. (Halbpension)`,
+  currenciesAccepted: 'EUR',
+  smokingAllowed: false,
+  availableLanguage: ['de', 'en', 'it'],
+  amenityFeature: [
+    { '@type': 'LocationFeatureSpecification', name: 'Free Wi-Fi', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Electric vehicle charging station', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Sauna', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Steam bath', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Infrared cabin', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Restaurant / half board', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Ski bus stop opposite the hotel', value: true },
+  ],
+  containedInPlace: { '@type': 'Place', name: 'Stubaital, Tirol, Österreich' },
+};
 ---
 
-<MainLayout title={page.meta.title} description={page.meta.description} locale={lang}>
+<MainLayout
+  title={page.meta.title}
+  description={page.meta.description}
+  locale={lang}
+  alternates={alternates}
+  ogImage={ogImage.src}
+  ogLocale={ogLocales[lang]}
+  structuredData={structuredData}
+>
   <div class="page-shell">
     <div class="site-frame">
       <header class="site-header">
@@ -349,9 +413,6 @@ const ids = sectionIds[lang];
                 </a>
                 <a class="contact-link" href={page.contact.emailHref}>
                   {page.contact.emailLabel}
-                </a>
-                <a class="contact-link" href={page.contact.secondaryLink.href} target="_blank" rel="noreferrer">
-                  {page.contact.secondaryLink.label}
                 </a>
               </div>
             </div>

@@ -65,7 +65,7 @@ export const siteContent = {
         { href: '#zimmer', label: 'Zimmer entdecken' },
       ],
       facts: [
-        'ab € 93,-- pro Person mit Halbpension',
+        'ab € 103,-- pro Person mit Halbpension',
         'kostenloses Glasfaser-WLAN im ganzen Haus',
         'Skibus-Haltestelle direkt gegenüber',
       ],
@@ -112,7 +112,7 @@ export const siteContent = {
         'Nichtraucherhotel mit Raucherbereich im Freien oder am Balkon',
       ],
       note:
-        'Die aktuelle Preisübersicht startet im Doppelzimmer bei € 93,-- pro Person und Tag, zuzüglich € 4,80 Ortstaxe.',
+        'Die aktuelle Preisübersicht startet im Doppelzimmer bei € 103,-- pro Person und Tag, zuzüglich € 4,80 Ortstaxe.',
       imageKey: 'guestRoom' as ImageKey,
       imageAlt: 'Modernisiertes Gästezimmer im Hotel Klima',
     },
@@ -126,11 +126,13 @@ export const siteContent = {
         bedBreakfast: 'Frühstück',
       },
       rows: [
-        { period: '30.09.2026 - 26.12.2026', halfBoard: '€ 98,--', bedBreakfast: '€ 78,--' },
+        { period: '30.09.2026 - 26.12.2026', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
         { period: '26.12.2026 - 04.01.2027', halfBoard: '€ 140,--', bedBreakfast: '€ 120,--' },
-        { period: '04.01.2027 - 06.02.2027', halfBoard: '€ 93,--', bedBreakfast: '€ 73,--' },
-        { period: '06.02.2027 - 20.03.2027', halfBoard: '€ 99,--', bedBreakfast: '€ 79,--' },
-        { period: '20.03.2027 - 29.03.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
+        { period: '04.01.2027 - 06.02.2027', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
+        { period: '06.02.2027 - 20.03.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
+        { period: '20.03.2027 - 29.03.2027', halfBoard: '€ 108,--', bedBreakfast: '€ 88,--' },
+        { period: '29.03.2027 - 30.09.2027', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
+        { period: '30.09.2027 - 26.12.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
       ],
       footnotes: [
         'Doppelzimmerpreise pro Person und Tag ohne Ortstaxe.',
@@ -262,7 +264,7 @@ export const siteContent = {
         { href: '#rooms', label: 'See the rooms' },
       ],
       facts: [
-        'from € 93,-- per person with half board',
+        'from € 103,-- per person with half board',
         'free fibre Wi-Fi throughout the hotel',
         'ski bus stop directly opposite the hotel',
       ],
@@ -309,7 +311,7 @@ export const siteContent = {
         'non-smoking hotel with smoking area outside or on the balcony',
       ],
       note:
-        'Current double-room prices with half board start from € 93,-- per person per day, plus the € 4,80 visitor tax.',
+        'Current double-room prices with half board start from € 103,-- per person per day, plus the € 4,80 visitor tax.',
       imageKey: 'guestRoom' as ImageKey,
       imageAlt: 'Refreshed guest room at Hotel Klima',
     },
@@ -323,11 +325,13 @@ export const siteContent = {
         bedBreakfast: 'Bed & breakfast',
       },
       rows: [
-        { period: '30.09.2026 - 26.12.2026', halfBoard: '€ 98,--', bedBreakfast: '€ 78,--' },
+        { period: '30.09.2026 - 26.12.2026', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
         { period: '26.12.2026 - 04.01.2027', halfBoard: '€ 140,--', bedBreakfast: '€ 120,--' },
-        { period: '04.01.2027 - 06.02.2027', halfBoard: '€ 93,--', bedBreakfast: '€ 73,--' },
-        { period: '06.02.2027 - 20.03.2027', halfBoard: '€ 99,--', bedBreakfast: '€ 79,--' },
-        { period: '20.03.2027 - 29.03.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
+        { period: '04.01.2027 - 06.02.2027', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
+        { period: '06.02.2027 - 20.03.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
+        { period: '20.03.2027 - 29.03.2027', halfBoard: '€ 108,--', bedBreakfast: '€ 88,--' },
+        { period: '29.03.2027 - 30.09.2027', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
+        { period: '30.09.2027 - 26.12.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
       ],
       footnotes: [
         'Double-room prices are per person per day, excluding visitor tax.',
@@ -459,7 +463,7 @@ export const siteContent = {
         { href: '#camere', label: 'Scopri le camere' },
       ],
       facts: [
-        'da € 93,-- a persona con mezza pensione',
+        'da € 103,-- a persona con mezza pensione',
         'Wi-Fi in fibra gratuito in tutto l’hotel',
         'fermata skibus proprio di fronte',
       ],
@@ -506,7 +510,7 @@ export const siteContent = {
         'hotel non fumatori con possibilità di fumare all’esterno o sul balcone',
       ],
       note:
-        'Secondo il listino attuale, la camera doppia con mezza pensione parte da € 93,-- a persona al giorno, tassa di soggiorno di € 4,80 esclusa.',
+        'Secondo il listino attuale, la camera doppia con mezza pensione parte da € 103,-- a persona al giorno, tassa di soggiorno di € 4,80 esclusa.',
       imageKey: 'guestRoom' as ImageKey,
       imageAlt: 'Camera rinnovata dell’Hotel Klima',
     },
@@ -520,11 +524,13 @@ export const siteContent = {
         bedBreakfast: 'Camera e colazione',
       },
       rows: [
-        { period: '30.09.2026 - 26.12.2026', halfBoard: '€ 98,--', bedBreakfast: '€ 78,--' },
+        { period: '30.09.2026 - 26.12.2026', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
         { period: '26.12.2026 - 04.01.2027', halfBoard: '€ 140,--', bedBreakfast: '€ 120,--' },
-        { period: '04.01.2027 - 06.02.2027', halfBoard: '€ 93,--', bedBreakfast: '€ 73,--' },
-        { period: '06.02.2027 - 20.03.2027', halfBoard: '€ 99,--', bedBreakfast: '€ 79,--' },
-        { period: '20.03.2027 - 29.03.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
+        { period: '04.01.2027 - 06.02.2027', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
+        { period: '06.02.2027 - 20.03.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
+        { period: '20.03.2027 - 29.03.2027', halfBoard: '€ 108,--', bedBreakfast: '€ 88,--' },
+        { period: '29.03.2027 - 30.09.2027', halfBoard: '€ 103,--', bedBreakfast: '€ 83,--' },
+        { period: '30.09.2027 - 26.12.2027', halfBoard: '€ 105,--', bedBreakfast: '€ 85,--' },
       ],
       footnotes: [
         'Prezzi in camera doppia per persona e per giorno, tassa di soggiorno esclusa.',

@@ -1,0 +1,68 @@
+---
+import MainLayout from '../../layouts/MainLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { legalContent, legalPath, type LegalPageKey } from '../../data/legal';
+import { locales, type Locale } from '../../data/site';
+
+export function getStaticPaths() {
+  return locales.flatMap((lang) =>
+    (['imprint', 'privacy'] as LegalPageKey[]).map((key) => ({
+      params: { lang, legal: legalContent[lang].pages[key].slug },
+      props: { key },
+    })),
+  );
+}
+
+const lang = Astro.params.lang as Locale;
+const { key } = Astro.props as { key: LegalPageKey };
+const legal = legalContent[lang];
+const page = legal.pages[key];
+
+const hreflangCodes = { de: 'de', en: 'en', it: 'it' } as const;
+const alternates = locales.map((item) => ({ lang: hreflangCodes[item], path: legalPath(item, key) }));
+---
+
+<MainLayout title={`${page.title} – Hotel Klima`} description={page.description} locale={lang} alternates={alternates}>
+  <div class="page-shell">
+    <div class="site-frame">
+      <header class="site-header">
+        <div class="header-bar">
+          <a class="brand" href={`/${lang}/`} translate="no">
+            <img class="brand__logo" src="/logo-klima.svg" alt="Hotel Klima – Hotel · Stubaital" width="362" height="125" />
+          </a>
+
+          <nav class="nav">
+            <a href={`/${lang}/`}>{legal.backLabel}</a>
+          </nav>
+
+          <div class="language-switcher notranslate" aria-label="Languages" translate="no">
+            {locales.map((item) => (
+              <a
+                href={legalPath(item, key)}
+                lang={item}
+                hreflang={item}
+                translate="no"
+                aria-current={item === lang ? 'page' : undefined}
+              >
+                {item.toUpperCase()}
+              </a>
+            ))}
+          </div>
+        </div>
+      </header>
+
+      <main class="section-card section-card--padded legal">
+        <h1>{page.title}</h1>
+        {page.sections.map((section) => (
+          <section class="legal__section">
+            <h2>{section.title}</h2>
+            {section.html.map((paragraph) => <p set:html={paragraph} />)}
+          </section>
+        ))}
+        <p class="legal__updated">{legal.updated}</p>
+      </main>
+
+      <SiteFooter lang={lang} />
+    </div>
+  </div>
+</MainLayout>

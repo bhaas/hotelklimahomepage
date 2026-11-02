@@ -1,0 +1,40 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { bookingContent } from '../data/booking';
+import { locales } from '../data/site';
+---
+
+<MainLayout
+  title="404 – Seite nicht gefunden | Hotel Klima"
+  description="Diese Seite wurde nicht gefunden."
+  locale="de"
+  noindex
+>
+  <div class="page-shell">
+    <div class="site-frame">
+      <header class="site-header">
+        <div class="header-bar">
+          <a class="brand" href="/de/" translate="no">
+            <img class="brand__logo" src="/logo-klima.svg" alt="Hotel Klima – Hotel · Stubaital" width="362" height="125" />
+          </a>
+        </div>
+      </header>
+
+      <main class="section-card section-card--padded not-found">
+        <p class="not-found__code">404</p>
+        <div class="not-found__langs">
+          {locales.map((lang) => (
+            <section class="not-found__lang" lang={lang}>
+              <h2>{bookingContent[lang].notFound.title}</h2>
+              <p>{bookingContent[lang].notFound.text}</p>
+              <a class="button" href={`/${lang}/`}>{bookingContent[lang].notFound.home}</a>
+            </section>
+          ))}
+        </div>
+      </main>
+
+      <SiteFooter lang="de" />
+    </div>
+  </div>
+</MainLayout>

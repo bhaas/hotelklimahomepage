@@ -1,0 +1,39 @@
+---
+import { legalContent, legalPath } from '../data/legal';
+import { siteContent, type Locale } from '../data/site';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const legal = legalContent[lang];
+const contact = siteContent[lang].contact;
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="site-footer__grid">
+    <div>
+      <a href={`/${lang}/`} translate="no">
+        <img class="site-footer__logo" src="/logo-klima.svg" alt="Hotel Klima" width="362" height="125" loading="lazy" />
+      </a>
+    </div>
+    <div>
+      <h2 class="site-footer__title">{legal.footer.contactTitle}</h2>
+      <address class="site-footer__list">
+        {contact.addressLines.map((line) => <span>{line}</span>)}
+        <a href={contact.phoneHref}>{contact.phoneLabel}</a>
+        <a href={contact.emailHref}>{contact.emailLabel}</a>
+      </address>
+    </div>
+    <div>
+      <h2 class="site-footer__title">{legal.footer.legalTitle}</h2>
+      <nav class="site-footer__list" aria-label={legal.footer.legalTitle}>
+        <a href={legalPath(lang, 'imprint')}>{legal.pages.imprint.title}</a>
+        <a href={legalPath(lang, 'privacy')}>{legal.pages.privacy.title}</a>
+      </nav>
+    </div>
+  </div>
+  <p class="site-footer__copy">© {year} Hotel Klima Ferienoase · Fam. Fritz Haas · {legal.footer.rights}</p>
+</footer>

@@ -61,7 +61,7 @@ export const siteContent = {
       description:
         'Hotel Klima verbindet ruhige Sonnenlage, persönlichen Service und beste Ausgangspunkte für Wanderungen, Skitage und Ausflüge rund um Neustift, Innsbruck und die Tiroler Bergwelt.',
       ctas: [
-        { href: 'mailto:haas@hotel-klima.com', label: 'Aufenthalt anfragen', primary: true },
+        { href: '#anfrage', label: 'Aufenthalt anfragen', primary: true },
         { href: '#zimmer', label: 'Zimmer entdecken' },
       ],
       facts: [
@@ -260,7 +260,7 @@ export const siteContent = {
       description:
         'Hotel Klima combines a quiet sunny position, personal service and easy access to hiking, skiing and day trips around Neustift, Innsbruck and the surrounding alpine landscape.',
       ctas: [
-        { href: 'mailto:haas@hotel-klima.com', label: 'Request your stay', primary: true },
+        { href: '#anfrage', label: 'Request your stay', primary: true },
         { href: '#rooms', label: 'See the rooms' },
       ],
       facts: [
@@ -459,7 +459,7 @@ export const siteContent = {
       description:
         "Hotel Klima unisce una posizione soleggiata e tranquilla, accoglienza personale e collegamenti comodi per escursioni, sci e gite tra Neustift, Innsbruck e le montagne tirolesi.",
       ctas: [
-        { href: 'mailto:haas@hotel-klima.com', label: 'Richiedi il soggiorno', primary: true },
+        { href: '#anfrage', label: 'Richiedi il soggiorno', primary: true },
         { href: '#camere', label: 'Scopri le camere' },
       ],
       facts: [

@@ -1,6 +1,9 @@
 ---
 import { Image, getImage } from 'astro:assets';
 import MainLayout from '../../layouts/MainLayout.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+import { legalContent, legalPath } from '../../data/legal';
+import { bookingContent, bookingEmail } from '../../data/booking';
 import { hotelImages, locales, siteContent, type Locale } from '../../data/site';
 
 export function getStaticPaths() {
@@ -9,6 +12,8 @@ export function getStaticPaths() {
 
 const lang = Astro.params.lang as Locale;
 const page = siteContent[lang];
+const legal = legalContent[lang];
+const booking = bookingContent[lang];
 
 if (!page) {
   throw new Error(`Unsupported language: ${Astro.params.lang}`);
@@ -393,6 +398,23 @@ const structuredData = {
           </div>
         </section>
 
+        <section class="section" id="info">
+          <div class="section-card section-card--padded">
+            <div class="section-heading">
+              <h2>{booking.practical.title}</h2>
+              <p>{booking.practical.text}</p>
+            </div>
+            <dl class="practical-grid">
+              {booking.practical.items.map((item) => (
+                <div class="practical-item">
+                  <dt>{item.label}</dt>
+                  <dd>{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </div>
+        </section>
+
         <section class="section" id={ids.contact}>
           <div class="section-card contact-card">
             <div class="contact-panel contact-copy">
@@ -415,6 +437,88 @@ const structuredData = {
                   {page.contact.emailLabel}
                 </a>
               </div>
+
+              <form
+                class="booking-form"
+                id="anfrage"
+                action={`mailto:${bookingEmail}`}
+                method="post"
+                enctype="text/plain"
+                data-email={bookingEmail}
+                data-subject={booking.form.subject}
+                data-date-error={booking.form.dateError}
+              >
+                <h3>{booking.form.title}</h3>
+                <p class="booking-form__intro">{booking.form.intro}</p>
+
+                <div class="booking-form__grid">
+                  <label class="field field--wide">
+                    <span>{booking.form.name}</span>
+                    <input name={booking.form.name} autocomplete="name" required />
+                  </label>
+                  <label class="field">
+                    <span>{booking.form.email}</span>
+                    <input type="email" name={booking.form.email} autocomplete="email" required />
+                  </label>
+                  <label class="field">
+                    <span>{booking.form.phone} <small>({booking.form.optional})</small></span>
+                    <input type="tel" name={booking.form.phone} autocomplete="tel" />
+                  </label>
+                  <label class="field">
+                    <span>{booking.form.arrival}</span>
+                    <input type="date" name={booking.form.arrival} data-role="arrival" required />
+                  </label>
+                  <label class="field">
+                    <span>{booking.form.departure}</span>
+                    <input type="date" name={booking.form.departure} data-role="departure" required />
+                  </label>
+                  <label class="field">
+                    <span>{booking.form.adults}</span>
+                    <input type="number" name={booking.form.adults} min="1" max="20" value="2" required />
+                  </label>
+                  <label class="field">
+                    <span>{booking.form.children}</span>
+                    <input type="number" name={booking.form.children} min="0" max="20" value="0" />
+                  </label>
+                  <label class="field field--wide">
+                    <span>{booking.form.childAges} <small>({booking.form.optional})</small></span>
+                    <input name={booking.form.childAges} placeholder={booking.form.childAgesPlaceholder} />
+                  </label>
+                  <label class="field">
+                    <span>{booking.form.room}</span>
+                    <select name={booking.form.room}>
+                      {booking.form.rooms.map((room) => <option>{room}</option>)}
+                    </select>
+                  </label>
+                  <label class="field">
+                    <span>{booking.form.board}</span>
+                    <select name={booking.form.board}>
+                      {booking.form.boards.map((board) => <option>{board}</option>)}
+                    </select>
+                  </label>
+                  <label class="field field--wide">
+                    <span>{booking.form.message} <small>({booking.form.optional})</small></span>
+                    <textarea name={booking.form.message} rows="4"></textarea>
+                  </label>
+                </div>
+
+                <button type="submit" class="button booking-form__submit">{booking.form.submit}</button>
+                <p class="booking-form__note">
+                  {booking.form.note} <a href={legalPath(lang, 'privacy')}>{booking.form.privacyLabel}</a>
+                </p>
+
+                <div class="booking-send" data-role="send" hidden tabindex="-1" aria-live="polite">
+                  <h4>{booking.form.send.title}</h4>
+                  <p>{booking.form.send.intro}</p>
+                  <div class="booking-send__actions">
+                    <a class="button" data-send="gmail" target="_blank" rel="noopener">{booking.form.send.gmail}</a>
+                    <a class="button" data-send="outlook" target="_blank" rel="noopener">{booking.form.send.outlook}</a>
+                    <a class="button" data-send="app">{booking.form.send.app}</a>
+                    <button type="button" class="button" data-send="copy">{booking.form.send.copy}</button>
+                  </div>
+                  <p class="booking-send__copied" data-role="copied" hidden>{booking.form.send.copied}</p>
+                </div>
+              </form>
             </div>
 
             <div class="contact-side">
@@ -433,14 +537,12 @@ const structuredData = {
               </article>
 
               <article class="card">
-                <div class="map-embed">
-                  <iframe
-                    src={page.contact.map.embedSrc}
-                    title={page.contact.map.embedTitle}
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    allowfullscreen
-                  ></iframe>
+                <div class="map-embed map-consent" data-src={page.contact.map.embedSrc} data-title={page.contact.map.embedTitle}>
+                  <div class="map-consent__box">
+                    <p>{legal.map.consentText}</p>
+                    <button type="button" class="button map-consent__button">{legal.map.loadLabel}</button>
+                    <a class="map-consent__privacy" href={legalPath(lang, 'privacy')}>{legal.pages.privacy.title}</a>
+                  </div>
                 </div>
                 <div class="card__body">
                   <h3>{page.contact.map.title}</h3>
@@ -456,6 +558,86 @@ const structuredData = {
           </div>
         </section>
       </main>
+      <SiteFooter lang={lang} />
     </div>
   </div>
 </MainLayout>
+
+<script>
+  document.querySelectorAll<HTMLElement>('.map-consent').forEach((container) => {
+    container.querySelector('button')?.addEventListener('click', () => {
+      const iframe = document.createElement('iframe');
+      iframe.src = container.dataset.src ?? '';
+      iframe.title = container.dataset.title ?? '';
+      iframe.referrerPolicy = 'no-referrer-when-downgrade';
+      iframe.allowFullscreen = true;
+      container.replaceChildren(iframe);
+      container.classList.remove('map-consent');
+    });
+  });
+
+  document.querySelectorAll<HTMLFormElement>('.booking-form').forEach((form) => {
+    const arrival = form.querySelector<HTMLInputElement>('[data-role="arrival"]');
+    const departure = form.querySelector<HTMLInputElement>('[data-role="departure"]');
+    const today = new Date().toISOString().slice(0, 10);
+    if (arrival && departure) {
+      arrival.min = today;
+      departure.min = today;
+      arrival.addEventListener('change', () => {
+        departure.min = arrival.value || today;
+        departure.setCustomValidity('');
+      });
+      departure.addEventListener('change', () => departure.setCustomValidity(''));
+    }
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (arrival && departure && arrival.value && departure.value && departure.value <= arrival.value) {
+        departure.setCustomValidity(form.dataset.dateError ?? '');
+        departure.reportValidity();
+        return;
+      }
+      if (!form.reportValidity()) return;
+
+      const formatDate = (value: string) => value.split('-').reverse().join('.');
+      const lines = [...new FormData(form).entries()]
+        .filter(([, value]) => String(value).trim() !== '')
+        .map(([key, value]) => {
+          const input = form.elements.namedItem(key) as HTMLInputElement | null;
+          return `${key}: ${input?.type === 'date' ? formatDate(String(value)) : value}`;
+        });
+      const subject = `${form.dataset.subject} ${arrival ? formatDate(arrival.value) : ''}–${departure ? formatDate(departure.value) : ''}`;
+      const body = lines.join('\n');
+      const to = form.dataset.email ?? '';
+      const q = (value: string) => encodeURIComponent(value);
+      const links: Record<string, string> = {
+        gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${q(to)}&su=${q(subject)}&body=${q(body)}`,
+        outlook: `https://outlook.live.com/mail/0/deeplink/compose?to=${q(to)}&subject=${q(subject)}&body=${q(body)}`,
+        app: `mailto:${to}?subject=${q(subject)}&body=${q(body)}`,
+      };
+      form.querySelectorAll<HTMLAnchorElement>('a[data-send]').forEach((link) => {
+        link.href = links[link.dataset.send ?? ''] ?? '#';
+      });
+      const copyButton = form.querySelector<HTMLButtonElement>('[data-send="copy"]');
+      const copied = form.querySelector<HTMLElement>('[data-role="copied"]');
+      if (copyButton) {
+        copyButton.onclick = async () => {
+          const text = `${to}\n${subject}\n\n${body}`;
+          try {
+            await navigator.clipboard.writeText(text);
+          } catch {
+            window.prompt('', text);
+          }
+          if (copied) copied.hidden = false;
+        };
+      }
+      if (copied) copied.hidden = true;
+      const panel = form.querySelector<HTMLElement>('[data-role="send"]');
+      if (panel) {
+        panel.hidden = false;
+        panel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        panel.focus({ preventScroll: true });
+      }
+    });
+  });
+</script>

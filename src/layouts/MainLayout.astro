@@ -9,9 +9,10 @@ interface Props {
   ogImage?: string;
   ogLocale?: string;
   structuredData?: Record<string, unknown>;
+  noindex?: boolean;
 }
 
-const { title, description, locale, alternates = [], ogImage, ogLocale, structuredData } = Astro.props;
+const { title, description, locale, alternates = [], ogImage, ogLocale, structuredData, noindex = false } = Astro.props;
 const site = Astro.site ?? new URL(Astro.url.origin);
 const canonical = new URL(Astro.url.pathname, site).href;
 const absolute = (path: string) => new URL(path, site).href;
@@ -26,8 +27,8 @@ const defaultAlternate = alternates.find((item) => item.lang === 'de');
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
-    <link rel="canonical" href={canonical} />
+    <meta name="robots" content={noindex ? 'noindex, follow' : 'index, follow, max-image-preview:large'} />
+    {!noindex && <link rel="canonical" href={canonical} />}
     {alternates.map((item) => <link rel="alternate" hreflang={item.lang} href={absolute(item.path)} />)}
     {defaultAlternate && <link rel="alternate" hreflang="x-default" href={absolute(defaultAlternate.path)} />}
     <link rel="sitemap" href="/sitemap-index.xml" />

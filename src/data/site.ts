@@ -126,6 +126,7 @@ export const siteContent = {
         'Die Zimmer sind gemütlich im Tiroler Stil gestaltet, teilweise modernisiert und für entspannte Urlaubstage ausgestattet. Viele Böden, Waschtische und technische Details wurden erneuert – und alle Zimmer haben neue, besonders bequeme Boxspringbetten in angenehmer Höhe.',
       bullets: [
         'Neue, hohe Boxspringbetten in allen Zimmern',
+        'Betten im Doppelzimmer auf Wunsch getrennt aufstellbar',
         'Bad oder Dusche, WC und Balkon',
         'LED-Flachbildfernseher, Telefon und kostenloses WLAN',
         'Viel Holz, warme Materialien und schöne Ausblicke',
@@ -347,6 +348,7 @@ export const siteContent = {
         'Rooms combine Tyrolean warmth with practical comfort. Several surfaces, washbasins and technical details have already been renewed to keep the stay relaxed and easy – and every room now has new, extra-comfortable box-spring beds at a pleasant height.',
       bullets: [
         'new, high box-spring beds in every room',
+        'double-room beds can be separated on request',
         'bath or shower, WC and balcony',
         'LED flat-screen TV, telephone and free Wi-Fi',
         'warm wood details and pleasing mountain views',
@@ -568,6 +570,7 @@ export const siteContent = {
         'Le camere uniscono calore tirolese e comfort pratico. Pavimenti, lavabi e diversi dettagli tecnici sono già stati rinnovati per rendere il soggiorno più piacevole – e tutte le camere dispongono di nuovi letti boxspring alti e particolarmente comodi.',
       bullets: [
         'nuovi letti boxspring alti in tutte le camere',
+        'nelle camere doppie i letti possono essere separati su richiesta',
         'bagno o doccia, WC e balcone',
         'TV LED, telefono e Wi-Fi gratuito',
         'molto legno, materiali caldi e belle viste sulle montagne',

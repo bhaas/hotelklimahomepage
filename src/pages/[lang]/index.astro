@@ -33,6 +33,7 @@ const sectionIds = {
     taste: 'genuss',
     region: 'region',
     contact: 'kontakt',
+    gallery: 'galerie',
   },
   en: {
     hotel: 'hotel',
@@ -41,6 +42,7 @@ const sectionIds = {
     taste: 'taste',
     region: 'region',
     contact: 'contact',
+    gallery: 'gallery',
   },
   it: {
     hotel: 'hotel',
@@ -49,6 +51,7 @@ const sectionIds = {
     taste: 'gusto',
     region: 'territorio',
     contact: 'contatti',
+    gallery: 'galleria',
   },
 } as const;
 
@@ -378,7 +381,7 @@ const structuredData = {
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id={ids.gallery}>
           <div class="section-card section-card--padded">
             <div class="section-heading">
               <h2>{page.gallery.title}</h2>

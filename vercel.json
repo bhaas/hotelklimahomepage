@@ -2,5 +2,81 @@
   "framework": "astro",
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
-  "redirects": [{ "source": "/", "destination": "/de/", "permanent": true }]
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/de/",
+      "permanent": true
+    },
+    {
+      "source": "/Startseite.html",
+      "destination": "/de/",
+      "permanent": true
+    },
+    {
+      "source": "/aktuelles.html",
+      "destination": "/de/",
+      "permanent": true
+    },
+    {
+      "source": "/zimmer.html",
+      "destination": "/de/#zimmer",
+      "permanent": true
+    },
+    {
+      "source": "/preise-3.html",
+      "destination": "/de/#preise",
+      "permanent": true
+    },
+    {
+      "source": "/wellnessoase.html",
+      "destination": "/de/#genuss",
+      "permanent": true
+    },
+    {
+      "source": "/umgebung.html",
+      "destination": "/de/#region",
+      "permanent": true
+    },
+    {
+      "source": "/winter.html",
+      "destination": "/de/#region",
+      "permanent": true
+    },
+    {
+      "source": "/links.html",
+      "destination": "/de/#region",
+      "permanent": true
+    },
+    {
+      "source": "/fotogalerie.html",
+      "destination": "/de/#galerie",
+      "permanent": true
+    },
+    {
+      "source": "/spieleoase.html",
+      "destination": "/de/#galerie",
+      "permanent": true
+    },
+    {
+      "source": "/spielehalle.html",
+      "destination": "/de/#galerie",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt_1.html",
+      "destination": "/de/#kontakt",
+      "permanent": true
+    },
+    {
+      "source": "/ferienwohnung-k-l-i-m-a.html",
+      "destination": "/de/#kontakt",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)\\.html",
+      "destination": "/de/",
+      "permanent": true
+    }
+  ]
 }

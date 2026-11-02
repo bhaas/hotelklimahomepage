@@ -47,3 +47,8 @@ The build output is generated in `dist\`.
 
 - Das Anfrageformular (`#anfrage`, Texte in `src/data/booking.ts`) speichert nichts auf der Website. Nach dem Absenden kann der Gast wählen: Gmail, Outlook.com, E-Mail-Programm (`mailto:`) oder Text kopieren.
 - `src/pages/404.astro` ist eine dreisprachige Fehlerseite (`noindex`); Vercel liefert `404.html` automatisch aus.
+
+## Domains
+
+- Hauptdomain: `www.hotel-klima.com` (canonical). `hotel-klima.at`, `www.hotel-klima.at`, `hotel-klima.info` und `www.hotel-klima.info` leiten per 308 (inkl. Pfad) auf `www.hotel-klima.com` um – konfiguriert in `vercel.json` (`has.host`), damit keine doppelten Inhalte indexiert werden.
+- Alte Seiten der früheren Website (`/zimmer.html`, `/preise-3.html` …) leiten auf die passenden Abschnitte um.

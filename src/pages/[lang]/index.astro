@@ -97,12 +97,20 @@ const structuredData = {
     addressCountry: 'AT',
   },
   hasMap: page.contact.map.href,
+  geo: { '@type': 'GeoCoordinates', latitude: 47.11692, longitude: 11.32607 },
+  checkinTime: '13:00',
+  checkoutTime: '10:00',
+  petsAllowed: false,
+  paymentAccepted: 'Cash, Bank transfer',
+  sameAs: ['https://www.hotel-klima.at/', 'https://www.hotel-klima.info/'],
   priceRange: `ab € ${lowestHalfBoard} p. P. (Halbpension)`,
   currenciesAccepted: 'EUR',
   smokingAllowed: false,
   availableLanguage: ['de', 'en', 'it'],
   amenityFeature: [
     { '@type': 'LocationFeatureSpecification', name: 'Free Wi-Fi', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Free parking', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Elevator', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Electric vehicle charging station', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Sauna', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Steam bath', value: true },
@@ -518,9 +526,9 @@ const structuredData = {
                   <h4>{booking.form.send.title}</h4>
                   <p>{booking.form.send.intro}</p>
                   <div class="booking-send__actions">
-                    <a class="button" data-send="gmail" target="_blank" rel="noopener">{booking.form.send.gmail}</a>
-                    <a class="button" data-send="outlook" target="_blank" rel="noopener">{booking.form.send.outlook}</a>
-                    <a class="button" data-send="app">{booking.form.send.app}</a>
+                    <a class="button" href="#anfrage" data-send="gmail" target="_blank" rel="noopener">{booking.form.send.gmail}</a>
+                    <a class="button" href="#anfrage" data-send="outlook" target="_blank" rel="noopener">{booking.form.send.outlook}</a>
+                    <a class="button" href="#anfrage" data-send="app">{booking.form.send.app}</a>
                     <button type="button" class="button" data-send="copy">{booking.form.send.copy}</button>
                   </div>
                   <p class="booking-send__copied" data-role="copied" hidden>{booking.form.send.copied}</p>

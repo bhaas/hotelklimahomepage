@@ -4,6 +4,50 @@
   "outputDirectory": "dist",
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "hotel-klima.at"
+        }
+      ],
+      "destination": "https://www.hotel-klima.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.hotel-klima.at"
+        }
+      ],
+      "destination": "https://www.hotel-klima.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "hotel-klima.info"
+        }
+      ],
+      "destination": "https://www.hotel-klima.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.hotel-klima.info"
+        }
+      ],
+      "destination": "https://www.hotel-klima.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/",
       "destination": "/de/",
       "permanent": true

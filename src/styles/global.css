@@ -113,6 +113,27 @@ img {
   color: var(--brand);
 }
 
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.header-cta {
+  min-height: 0;
+  padding: 11px 18px;
+  background: var(--brand);
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.header-cta:hover,
+.header-cta:focus-visible {
+  background: var(--brand-strong);
+}
+
 .language-switcher {
   display: inline-flex;
   align-items: center;
@@ -1052,6 +1073,10 @@ h1 {
 
   .nav {
     justify-content: flex-start;
+  }
+
+  .header-actions {
+    justify-content: space-between;
   }
 
   .contact-side {

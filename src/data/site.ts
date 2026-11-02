@@ -154,8 +154,8 @@ export const siteContent = {
           text:
             'Vom Frühstücksbuffet bis zum Abendmenü: Stube, Wintergarten und Buffetbereich schaffen einen warmen Rahmen für entspannte Urlaubstage.',
           bullets: ['Frühstücksbuffet', 'wahlweise Halbpension', 'besondere Themenabende im Jahresverlauf'],
-          imageKey: 'diningErker' as ImageKey,
-          imageAlt: 'Gedeckter Tisch im Erker des Speisesaals mit Blick ins Grüne',
+          imageKey: 'diningStube' as ImageKey,
+          imageAlt: 'Tiroler Stube im Hotel Klima',
         },
         {
           title: 'Wellness nach einem aktiven Tag',
@@ -217,6 +217,7 @@ export const siteContent = {
         { key: 'winterPanorama' as ImageKey, alt: 'Panorama des Hotels im Winter' },
         { key: 'guestRoom' as ImageKey, alt: 'Zimmer im Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Frühstücks- und Buffetangebot im Hotel Klima' },
+        { key: 'diningErker' as ImageKey, alt: 'Gedeckter Tisch im Erker des Speisesaals mit Blick ins Grüne' },
         { key: 'valleyView' as ImageKey, alt: 'Talblick in Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Stimmungsbild aus der Umgebung im Stubaital' },
         { key: 'playroom' as ImageKey, alt: 'Spieleraum im Hotel Klima' },
@@ -353,8 +354,8 @@ export const siteContent = {
           text:
             'From breakfast to dinner, the traditional stube, winter garden and buffet area give every meal a warm and personal setting.',
           bullets: ['breakfast buffet', 'half-board option', 'seasonal themed evenings'],
-          imageKey: 'diningErker' as ImageKey,
-          imageAlt: 'Table set in the dining room bay window with a view of the meadows',
+          imageKey: 'diningStube' as ImageKey,
+          imageAlt: 'Traditional dining room at Hotel Klima',
         },
         {
           title: 'Wellness after the mountains',
@@ -416,6 +417,7 @@ export const siteContent = {
         { key: 'winterPanorama' as ImageKey, alt: 'Hotel panorama in winter' },
         { key: 'guestRoom' as ImageKey, alt: 'Guest room at Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Breakfast and buffet offering at Hotel Klima' },
+        { key: 'diningErker' as ImageKey, alt: 'Table set in the dining room bay window with a view of the meadows' },
         { key: 'valleyView' as ImageKey, alt: 'Valley view in Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Scenic view from the Stubai Valley surroundings' },
         { key: 'playroom' as ImageKey, alt: 'Games room at Hotel Klima' },
@@ -552,8 +554,8 @@ export const siteContent = {
           text:
             'Dalla colazione alla cena, la stube tradizionale, il giardino d’inverno e l’area buffet creano un ambiente caldo e personale.',
           bullets: ['buffet della colazione', 'mezza pensione disponibile', 'serate a tema durante l’anno'],
-          imageKey: 'diningErker' as ImageKey,
-          imageAlt: 'Tavola apparecchiata nel bovindo della sala da pranzo con vista sul verde',
+          imageKey: 'diningStube' as ImageKey,
+          imageAlt: 'Stube tradizionale dell’Hotel Klima',
         },
         {
           title: 'Wellness dopo la montagna',
@@ -615,6 +617,7 @@ export const siteContent = {
         { key: 'winterPanorama' as ImageKey, alt: 'Panorama dell’hotel in inverno' },
         { key: 'guestRoom' as ImageKey, alt: 'Camera dell’Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Offerta buffet dell’Hotel Klima' },
+        { key: 'diningErker' as ImageKey, alt: 'Tavola apparecchiata nel bovindo della sala da pranzo con vista sul verde' },
         { key: 'valleyView' as ImageKey, alt: 'Vista sulla valle a Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Veduta suggestiva dei dintorni della Val Stubai' },
         { key: 'playroom' as ImageKey, alt: 'Sala giochi dell’Hotel Klima' },

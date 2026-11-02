@@ -14,6 +14,14 @@ import stubaiWinter from '../assets/hotel/18-location-stubai-winter.jpg';
 import playroom from '../assets/hotel/19-playroom.jpg';
 import elferhuetteWinter from '../assets/hotel/20-elferhuette-winter.jpg';
 import elferhuetteClouds from '../assets/hotel/21-elferhuette-clouds.jpg';
+import wellnessSauna from '../assets/hotel/22-wellness-sauna.jpg';
+import wellnessInfrared from '../assets/hotel/23-wellness-infrared.jpg';
+import wellnessRelax from '../assets/hotel/24-wellness-relax.jpg';
+import wellnessSteam from '../assets/hotel/25-wellness-steam.jpg';
+import wellnessWhirlpool from '../assets/hotel/26-wellness-whirlpool.jpg';
+import winterGardenSummer from '../assets/hotel/27-winter-garden-summer.jpg';
+import hotelBar from '../assets/hotel/28-hotel-bar.jpg';
+import reception from '../assets/hotel/29-reception.jpg';
 
 export const hotelImages = {
   heroWinter,
@@ -32,6 +40,14 @@ export const hotelImages = {
   playroom,
   elferhuetteWinter,
   elferhuetteClouds,
+  wellnessSauna,
+  wellnessInfrared,
+  wellnessRelax,
+  wellnessSteam,
+  wellnessWhirlpool,
+  winterGardenSummer,
+  hotelBar,
+  reception,
 } as const;
 
 export type ImageKey = keyof typeof hotelImages;
@@ -53,7 +69,8 @@ export const siteContent = {
       { href: '#hotel', label: 'Hotel' },
       { href: '#zimmer', label: 'Zimmer' },
       { href: '#preise', label: 'Preise' },
-      { href: '#genuss', label: 'Genuss & Wellness' },
+      { href: '#genuss', label: 'Genuss' },
+      { href: '#wellness', label: 'Wellness' },
       { href: '#region', label: 'Region' },
       { href: '#kontakt', label: 'Kontakt' },
     ],
@@ -158,13 +175,29 @@ export const siteContent = {
           imageAlt: 'Tiroler Stube im Hotel Klima',
         },
         {
-          title: 'Wellness nach einem aktiven Tag',
+          title: 'Wintergarten, Kamin & Hausbar',
           text:
-            'Die Wellnessoase ist ein ruhiger Rückzugsort nach Wandern oder Skifahren. Sauna, Dampfbad, Infrarotkabine und Ruheraum gehören zum Hausangebot.',
-          bullets: ['Sauna und Dampfbad', 'Infrarotkabine und Ruheraum', 'Whirlbad und Massagen auf Anfrage'],
-          imageKey: 'winterGarden' as ImageKey,
-          imageAlt: 'Wintergarten mit Panoramablick im Hotel Klima',
+            'Im lichtdurchfluteten Wintergarten beginnt der Tag mit Sonne und Bergblick. Am Abend klingt er bei einem Glas Wein am Kamin oder an unserer gemütlichen Hausbar aus.',
+          bullets: ['Wintergarten mit Panoramablick', 'offener Kamin im Wintergarten und an der Rezeption', 'Hausbar in Tiroler Holzambiente'],
+          imageKey: 'winterGardenSummer' as ImageKey,
+          imageAlt: 'Sonniger Wintergarten mit gedeckten Tischen und Blick auf die Berge',
         },
+      ],
+    },
+    wellness: {
+      title: 'Wellnessoase – Entspannung nach Berg und Piste',
+      text:
+        'Nach einem Ski- oder Wandertag wartet unsere Wellnessoase: Sauna, Dampfbad und Infrarotkabine sind täglich ab dem späten Nachmittag in Betrieb – für Hausgäste kostenlos. Verschiedene Saunaaufgüsse sorgen immer wieder für neue Inhalationserlebnisse.',
+      includedTitle: 'Täglich & kostenlos',
+      included: ['Finnische Sauna mit Aufgüssen', 'Dampfbad', 'Infrarotkabine', 'Ruheraum mit Liegen', 'Duschen und Duschtücher'],
+      extrasTitle: 'Gegen kleine Gebühr',
+      extras: ['Frischwasser-Whirlbad – ideal bei Muskelkater', 'Massagen auf Vorbestellung', 'Liegewiese in sonniger Ruhelage'],
+      images: [
+        { key: 'wellnessRelax' as ImageKey, alt: 'Ruhebereich mit Liegen und Infrarotkabine in der Wellnessoase' },
+        { key: 'wellnessSauna' as ImageKey, alt: 'Finnische Sauna mit Holzbänken und Saunaofen' },
+        { key: 'wellnessInfrared' as ImageKey, alt: 'Infrarotkabine neben den Ruheliegen' },
+        { key: 'wellnessSteam' as ImageKey, alt: 'Eingang zum Dampfbad in der Wellnessoase' },
+        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Whirlwanne für Frischwasser-Whirlbäder' },
       ],
     },
     region: {
@@ -218,6 +251,9 @@ export const siteContent = {
         { key: 'guestRoom' as ImageKey, alt: 'Zimmer im Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Frühstücks- und Buffetangebot im Hotel Klima' },
         { key: 'diningErker' as ImageKey, alt: 'Gedeckter Tisch im Erker des Speisesaals mit Blick ins Grüne' },
+        { key: 'winterGarden' as ImageKey, alt: 'Wintergarten am Abend mit Blick auf das verschneite Stubaital' },
+        { key: 'hotelBar' as ImageKey, alt: 'Gemütliche Hausbar in Tiroler Holzambiente' },
+        { key: 'reception' as ImageKey, alt: 'Rezeption mit offenem Kamin im Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Talblick in Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Stimmungsbild aus der Umgebung im Stubaital' },
         { key: 'playroom' as ImageKey, alt: 'Spieleraum im Hotel Klima' },
@@ -253,7 +289,8 @@ export const siteContent = {
       { href: '#hotel', label: 'Hotel' },
       { href: '#rooms', label: 'Rooms' },
       { href: '#prices', label: 'Prices' },
-      { href: '#taste', label: 'Dining & wellness' },
+      { href: '#taste', label: 'Dining' },
+      { href: '#wellness', label: 'Wellness' },
       { href: '#region', label: 'Region' },
       { href: '#contact', label: 'Contact' },
     ],
@@ -358,13 +395,29 @@ export const siteContent = {
           imageAlt: 'Traditional dining room at Hotel Klima',
         },
         {
-          title: 'Wellness after the mountains',
+          title: 'Winter garden, fireplace & bar',
           text:
-            'The wellness area is made for recovery after hiking or skiing, with sauna, steam bath, infrared cabin and a quiet lounge.',
-          bullets: ['sauna and steam bath', 'infrared cabin and relaxation room', 'whirlpool bath and massages on request'],
-          imageKey: 'winterGarden' as ImageKey,
-          imageAlt: 'Winter garden with mountain view at Hotel Klima',
+            'The bright winter garden starts your day with sunshine and mountain views. In the evening, unwind with a glass of wine by the fireplace or at our cosy hotel bar.',
+          bullets: ['winter garden with panoramic views', 'open fireplaces in the winter garden and at reception', 'hotel bar in Tyrolean wood style'],
+          imageKey: 'winterGardenSummer' as ImageKey,
+          imageAlt: 'Sunny winter garden with set tables and a view of the mountains',
         },
+      ],
+    },
+    wellness: {
+      title: 'Wellness area – unwind after the slopes and trails',
+      text:
+        'After a day of skiing or hiking, our wellness area is waiting: sauna, steam bath and infrared cabin are open daily from late afternoon and free of charge for hotel guests. Different sauna infusions keep every session fresh.',
+      includedTitle: 'Daily & free of charge',
+      included: ['Finnish sauna with infusions', 'steam bath', 'infrared cabin', 'relaxation room with loungers', 'showers and towels'],
+      extrasTitle: 'For a small fee',
+      extras: ['fresh-water whirlpool bath – ideal for sore muscles', 'massages bookable in advance', 'sunbathing lawn in a quiet, sunny spot'],
+      images: [
+        { key: 'wellnessRelax' as ImageKey, alt: 'Relaxation area with loungers and infrared cabin' },
+        { key: 'wellnessSauna' as ImageKey, alt: 'Finnish sauna with wooden benches and sauna stove' },
+        { key: 'wellnessInfrared' as ImageKey, alt: 'Infrared cabin next to the loungers' },
+        { key: 'wellnessSteam' as ImageKey, alt: 'Entrance to the steam bath in the wellness area' },
+        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Whirlpool tub for fresh-water whirlpool baths' },
       ],
     },
     region: {
@@ -418,6 +471,9 @@ export const siteContent = {
         { key: 'guestRoom' as ImageKey, alt: 'Guest room at Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Breakfast and buffet offering at Hotel Klima' },
         { key: 'diningErker' as ImageKey, alt: 'Table set in the dining room bay window with a view of the meadows' },
+        { key: 'winterGarden' as ImageKey, alt: 'Winter garden in the evening overlooking the snowy Stubai Valley' },
+        { key: 'hotelBar' as ImageKey, alt: 'Cosy hotel bar in Tyrolean wood style' },
+        { key: 'reception' as ImageKey, alt: 'Reception with open fireplace at Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Valley view in Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Scenic view from the Stubai Valley surroundings' },
         { key: 'playroom' as ImageKey, alt: 'Games room at Hotel Klima' },
@@ -453,7 +509,8 @@ export const siteContent = {
       { href: '#hotel', label: 'Hotel' },
       { href: '#camere', label: 'Camere' },
       { href: '#prezzi', label: 'Prezzi' },
-      { href: '#gusto', label: 'Gusto e wellness' },
+      { href: '#gusto', label: 'Gusto' },
+      { href: '#benessere', label: 'Benessere' },
       { href: '#territorio', label: 'Territorio' },
       { href: '#contatti', label: 'Contatti' },
     ],
@@ -558,13 +615,29 @@ export const siteContent = {
           imageAlt: 'Stube tradizionale dell’Hotel Klima',
         },
         {
-          title: 'Wellness dopo la montagna',
+          title: 'Giardino d’inverno, camino e bar',
           text:
-            'L’area wellness è pensata per recuperare dopo escursioni o sci, con sauna, bagno turco, cabina a infrarossi e zona relax.',
-          bullets: ['sauna e bagno turco', 'cabina a infrarossi e sala relax', 'vasca idromassaggio e massaggi su richiesta'],
-          imageKey: 'winterGarden' as ImageKey,
-          imageAlt: 'Giardino d’inverno con vista montagna all’Hotel Klima',
+            'Nel luminoso giardino d’inverno la giornata inizia con il sole e la vista sulle montagne. La sera si conclude con un bicchiere di vino davanti al camino o al nostro accogliente bar.',
+          bullets: ['giardino d’inverno con vista panoramica', 'camino nel giardino d’inverno e alla reception', 'bar dell’hotel in legno tirolese'],
+          imageKey: 'winterGardenSummer' as ImageKey,
+          imageAlt: 'Giardino d’inverno soleggiato con tavoli apparecchiati e vista sulle montagne',
         },
+      ],
+    },
+    wellness: {
+      title: 'Oasi benessere – relax dopo piste e sentieri',
+      text:
+        'Dopo una giornata sugli sci o in escursione vi aspetta la nostra oasi benessere: sauna, bagno turco e cabina a infrarossi sono in funzione ogni giorno dal tardo pomeriggio, gratuitamente per gli ospiti dell’hotel. Diverse gettate di vapore rendono ogni sauna un’esperienza nuova.',
+      includedTitle: 'Ogni giorno e gratuito',
+      included: ['sauna finlandese con gettate', 'bagno turco', 'cabina a infrarossi', 'sala relax con lettini', 'docce e teli'],
+      extrasTitle: 'Con un piccolo supplemento',
+      extras: ['idromassaggio con acqua fresca – ideale contro i dolori muscolari', 'massaggi su prenotazione', 'prato solarium in posizione tranquilla e soleggiata'],
+      images: [
+        { key: 'wellnessRelax' as ImageKey, alt: 'Zona relax con lettini e cabina a infrarossi' },
+        { key: 'wellnessSauna' as ImageKey, alt: 'Sauna finlandese con panche in legno e stufa' },
+        { key: 'wellnessInfrared' as ImageKey, alt: 'Cabina a infrarossi accanto ai lettini' },
+        { key: 'wellnessSteam' as ImageKey, alt: 'Ingresso al bagno turco dell’oasi benessere' },
+        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Vasca idromassaggio con acqua fresca' },
       ],
     },
     region: {
@@ -618,6 +691,9 @@ export const siteContent = {
         { key: 'guestRoom' as ImageKey, alt: 'Camera dell’Hotel Klima' },
         { key: 'breakfastBuffet' as ImageKey, alt: 'Offerta buffet dell’Hotel Klima' },
         { key: 'diningErker' as ImageKey, alt: 'Tavola apparecchiata nel bovindo della sala da pranzo con vista sul verde' },
+        { key: 'winterGarden' as ImageKey, alt: 'Giardino d’inverno di sera con vista sulla Val Stubai innevata' },
+        { key: 'hotelBar' as ImageKey, alt: 'Accogliente bar dell’hotel in legno tirolese' },
+        { key: 'reception' as ImageKey, alt: 'Reception con camino dell’Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Vista sulla valle a Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Veduta suggestiva dei dintorni della Val Stubai' },
         { key: 'playroom' as ImageKey, alt: 'Sala giochi dell’Hotel Klima' },

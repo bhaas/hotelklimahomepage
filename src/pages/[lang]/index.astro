@@ -31,6 +31,7 @@ const sectionIds = {
     rooms: 'zimmer',
     prices: 'preise',
     taste: 'genuss',
+    wellness: 'wellness',
     region: 'region',
     contact: 'kontakt',
     gallery: 'galerie',
@@ -40,6 +41,7 @@ const sectionIds = {
     rooms: 'rooms',
     prices: 'prices',
     taste: 'taste',
+    wellness: 'wellness',
     region: 'region',
     contact: 'contact',
     gallery: 'gallery',
@@ -49,6 +51,7 @@ const sectionIds = {
     rooms: 'camere',
     prices: 'prezzi',
     taste: 'gusto',
+    wellness: 'benessere',
     region: 'territorio',
     contact: 'contatti',
     gallery: 'galleria',
@@ -115,6 +118,9 @@ const structuredData = {
     { '@type': 'LocationFeatureSpecification', name: 'Sauna', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Steam bath', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Infrared cabin', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Hot tub', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Massage', value: true },
+    { '@type': 'LocationFeatureSpecification', name: 'Bar', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Restaurant / half board', value: true },
     { '@type': 'LocationFeatureSpecification', name: 'Ski bus stop opposite the hotel', value: true },
   ],
@@ -333,6 +339,48 @@ const structuredData = {
                 </div>
               </article>
             ))}
+          </div>
+        </section>
+
+        <section class="section" id={ids.wellness}>
+          <div class="section-card section-card--padded">
+            <div class="wellness-intro">
+              <div class="section-heading">
+                <h2>{page.wellness.title}</h2>
+                <p>{page.wellness.text}</p>
+              </div>
+              <div class="wellness-offers">
+                <div>
+                  <h3>{page.wellness.includedTitle}</h3>
+                  <ul class="check-list">
+                    {page.wellness.included.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div>
+                  <h3>{page.wellness.extrasTitle}</h3>
+                  <ul class="check-list">
+                    {page.wellness.extras.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="wellness-mosaic">
+              {page.wellness.images.map((image, index) => (
+                <div class:list={['wellness-mosaic__item', index === 0 && 'wellness-mosaic__item--tall']}>
+                  <Image
+                    src={hotelImages[image.key]}
+                    alt={image.alt}
+                    widths={index === 0 ? [480, 720, 960] : [520, 720, 960]}
+                    sizes={index === 0 ? '(max-width: 1080px) 50vw, 26vw' : '(max-width: 1080px) 50vw, 34vw'}
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

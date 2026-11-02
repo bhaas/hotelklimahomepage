@@ -253,7 +253,6 @@ export const siteContent = {
         { key: 'diningErker' as ImageKey, alt: 'Gedeckter Tisch im Erker des Speisesaals mit Blick ins Grüne' },
         { key: 'winterGardenSummer' as ImageKey, alt: 'Sonniger Wintergarten mit gedeckten Tischen und Blick auf die Berge' },
         { key: 'hotelBar' as ImageKey, alt: 'Gemütliche Hausbar in Tiroler Holzambiente' },
-        { key: 'reception' as ImageKey, alt: 'Rezeption mit offenem Kamin im Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Talblick in Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Stimmungsbild aus der Umgebung im Stubaital' },
         { key: 'playroom' as ImageKey, alt: 'Spieleraum im Hotel Klima' },
@@ -263,6 +262,7 @@ export const siteContent = {
       title: 'Direkt anfragen',
       text:
         'Für Buchungen und Rückfragen ist die Familie Haas täglich persönlich erreichbar. So bleibt der erste Kontakt genauso persönlich wie der Aufenthalt.',
+      imageAlt: 'Rezeption mit offenem Kamin im Hotel Klima',
       addressLines: ['Hotel Klima Ferienoase', 'Fam. Fritz Haas', 'Pinnisweg 53', 'A-6167 Neustift-Neder, Tirol'],
       phoneLabel: '+43 (0)5226 2526',
       phoneHref: 'tel:+4352262526',
@@ -473,7 +473,6 @@ export const siteContent = {
         { key: 'diningErker' as ImageKey, alt: 'Table set in the dining room bay window with a view of the meadows' },
         { key: 'winterGardenSummer' as ImageKey, alt: 'Sunny winter garden with set tables and a view of the mountains' },
         { key: 'hotelBar' as ImageKey, alt: 'Cosy hotel bar in Tyrolean wood style' },
-        { key: 'reception' as ImageKey, alt: 'Reception with open fireplace at Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Valley view in Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Scenic view from the Stubai Valley surroundings' },
         { key: 'playroom' as ImageKey, alt: 'Games room at Hotel Klima' },
@@ -483,6 +482,7 @@ export const siteContent = {
       title: 'Book directly',
       text:
         'The Haas family handles enquiries personally every day, so the first contact already feels as direct and welcoming as the stay itself.',
+      imageAlt: 'Reception with open fireplace at Hotel Klima',
       addressLines: ['Hotel Klima Ferienoase', 'Haas family', 'Pinnisweg 53', 'A-6167 Neustift-Neder, Tyrol'],
       phoneLabel: '+43 (0)5226 2526',
       phoneHref: 'tel:+4352262526',
@@ -693,7 +693,6 @@ export const siteContent = {
         { key: 'diningErker' as ImageKey, alt: 'Tavola apparecchiata nel bovindo della sala da pranzo con vista sul verde' },
         { key: 'winterGardenSummer' as ImageKey, alt: 'Giardino d’inverno soleggiato con tavoli apparecchiati e vista sulle montagne' },
         { key: 'hotelBar' as ImageKey, alt: 'Accogliente bar dell’hotel in legno tirolese' },
-        { key: 'reception' as ImageKey, alt: 'Reception con camino dell’Hotel Klima' },
         { key: 'valleyView' as ImageKey, alt: 'Vista sulla valle a Neustift' },
         { key: 'kamplerSee' as ImageKey, alt: 'Veduta suggestiva dei dintorni della Val Stubai' },
         { key: 'playroom' as ImageKey, alt: 'Sala giochi dell’Hotel Klima' },
@@ -703,6 +702,7 @@ export const siteContent = {
       title: 'Richiedi direttamente',
       text:
         'La famiglia Haas segue personalmente le richieste ogni giorno, così il primo contatto risulta già diretto e accogliente come il soggiorno.',
+      imageAlt: 'Reception con camino dell’Hotel Klima',
       addressLines: ['Hotel Klima Ferienoase', 'Famiglia Haas', 'Pinnisweg 53', 'A-6167 Neustift-Neder, Tirolo'],
       phoneLabel: '+43 (0)5226 2526',
       phoneHref: 'tel:+4352262526',

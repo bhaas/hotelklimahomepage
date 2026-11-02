@@ -296,8 +296,8 @@ const structuredData = {
                   {page.pricing.rows.map((row) => (
                     <tr>
                       <td>{row.period}</td>
-                      <td>{row.halfBoard}</td>
-                      <td>{row.bedBreakfast}</td>
+                      <td data-label={page.pricing.columns.halfBoard}>{row.halfBoard}</td>
+                      <td data-label={page.pricing.columns.bedBreakfast}>{row.bedBreakfast}</td>
                     </tr>
                   ))}
                 </tbody>

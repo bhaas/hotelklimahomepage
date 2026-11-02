@@ -5,6 +5,7 @@ import aerialSummer from '../assets/hotel/05-aerial-summer.jpg';
 import guestRoom from '../assets/hotel/06-guest-room.jpg';
 import winterGarden from '../assets/hotel/07-winter-garden.jpg';
 import diningStube from '../assets/hotel/08-dining-stube.jpg';
+import diningErker from '../assets/hotel/09-dining-erker.jpg';
 import breakfastBuffet from '../assets/hotel/10-breakfast-buffet.jpg';
 import valleyView from '../assets/hotel/15-valley-view-16x9.jpg';
 import summerMeadow from '../assets/hotel/16-summer-meadow.jpg';
@@ -22,6 +23,7 @@ export const hotelImages = {
   guestRoom,
   winterGarden,
   diningStube,
+  diningErker,
   breakfastBuffet,
   valleyView,
   summerMeadow,
@@ -152,8 +154,8 @@ export const siteContent = {
           text:
             'Vom Frühstücksbuffet bis zum Abendmenü: Stube, Wintergarten und Buffetbereich schaffen einen warmen Rahmen für entspannte Urlaubstage.',
           bullets: ['Frühstücksbuffet', 'wahlweise Halbpension', 'besondere Themenabende im Jahresverlauf'],
-          imageKey: 'diningStube' as ImageKey,
-          imageAlt: 'Tiroler Stube im Hotel Klima',
+          imageKey: 'diningErker' as ImageKey,
+          imageAlt: 'Gedeckter Tisch im Erker des Speisesaals mit Blick ins Grüne',
         },
         {
           title: 'Wellness nach einem aktiven Tag',
@@ -351,8 +353,8 @@ export const siteContent = {
           text:
             'From breakfast to dinner, the traditional stube, winter garden and buffet area give every meal a warm and personal setting.',
           bullets: ['breakfast buffet', 'half-board option', 'seasonal themed evenings'],
-          imageKey: 'diningStube' as ImageKey,
-          imageAlt: 'Traditional dining room at Hotel Klima',
+          imageKey: 'diningErker' as ImageKey,
+          imageAlt: 'Table set in the dining room bay window with a view of the meadows',
         },
         {
           title: 'Wellness after the mountains',
@@ -550,8 +552,8 @@ export const siteContent = {
           text:
             'Dalla colazione alla cena, la stube tradizionale, il giardino d’inverno e l’area buffet creano un ambiente caldo e personale.',
           bullets: ['buffet della colazione', 'mezza pensione disponibile', 'serate a tema durante l’anno'],
-          imageKey: 'diningStube' as ImageKey,
-          imageAlt: 'Stube tradizionale dell’Hotel Klima',
+          imageKey: 'diningErker' as ImageKey,
+          imageAlt: 'Tavola apparecchiata nel bovindo della sala da pranzo con vista sul verde',
         },
         {
           title: 'Wellness dopo la montagna',

@@ -375,6 +375,7 @@ const structuredData = {
                   <Image
                     src={hotelImages[image.key]}
                     alt={image.alt}
+                    style={'position' in image ? `object-position: ${image.position}` : undefined}
                     widths={index === 0 ? [480, 720, 960] : [520, 720, 960]}
                     sizes={index === 0 ? '(max-width: 1080px) 50vw, 26vw' : '(max-width: 1080px) 50vw, 34vw'}
                   />

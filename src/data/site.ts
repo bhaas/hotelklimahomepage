@@ -199,7 +199,7 @@ export const siteContent = {
         { key: 'wellnessSauna' as ImageKey, alt: 'Finnische Sauna mit Holzbänken und Saunaofen' },
         { key: 'wellnessInfrared' as ImageKey, alt: 'Infrarotkabine neben den Ruheliegen' },
         { key: 'wellnessSteam' as ImageKey, alt: 'Eingang zum Dampfbad in der Wellnessoase' },
-        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Whirlwanne für Frischwasser-Whirlbäder' },
+        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Entspannung im sprudelnden Frischwasser-Whirlbad', position: '70% 25%' },
       ],
     },
     region: {
@@ -421,7 +421,7 @@ export const siteContent = {
         { key: 'wellnessSauna' as ImageKey, alt: 'Finnish sauna with wooden benches and sauna stove' },
         { key: 'wellnessInfrared' as ImageKey, alt: 'Infrared cabin next to the loungers' },
         { key: 'wellnessSteam' as ImageKey, alt: 'Entrance to the steam bath in the wellness area' },
-        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Whirlpool tub for fresh-water whirlpool baths' },
+        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Relaxing in the bubbling fresh-water whirlpool bath', position: '70% 25%' },
       ],
     },
     region: {
@@ -643,7 +643,7 @@ export const siteContent = {
         { key: 'wellnessSauna' as ImageKey, alt: 'Sauna finlandese con panche in legno e stufa' },
         { key: 'wellnessInfrared' as ImageKey, alt: 'Cabina a infrarossi accanto ai lettini' },
         { key: 'wellnessSteam' as ImageKey, alt: 'Ingresso al bagno turco dell’oasi benessere' },
-        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Vasca idromassaggio con acqua fresca' },
+        { key: 'wellnessWhirlpool' as ImageKey, alt: 'Relax nell’idromassaggio con acqua fresca', position: '70% 25%' },
       ],
     },
     region: {

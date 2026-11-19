@@ -45,7 +45,7 @@ The build output is generated in `dist\`.
 
 ## Anfrageformular & 404
 
-- Das Anfrageformular (`#anfrage`, Texte in `src/data/booking.ts`) speichert nichts auf der Website. Nach dem Absenden kann der Gast wählen: Gmail, Outlook.com, E-Mail-Programm (`mailto:`) oder Text kopieren.
+- Das Anfrageformular (`#anfrage`, Texte in `src/data/booking.ts`) sendet die Anfrage über die Vercel-Funktion `api/inquiry.js` per SMTP (A1) direkt an haas@hotel-klima.com (Antworten-An = Gast). Nötige Umgebungsvariablen in Vercel: `SMTP_USER`, `SMTP_PASS`; optional `SMTP_HOST` (Standard `smtp.a1.net`), `SMTP_PORT` (587), `INQUIRY_TO`, `INQUIRY_FROM`. Schlägt das Senden fehl, kann der Gast die vorbereitete Anfrage über Gmail, Outlook.com oder „Text kopieren“ selbst schicken. Spam-Schutz: unsichtbares Honeypot-Feld, Mindest-Ausfüllzeit, Origin-Prüfung.
 - `src/pages/404.astro` ist eine dreisprachige Fehlerseite (`noindex`); Vercel liefert `404.html` automatisch aus.
 
 ## Domains

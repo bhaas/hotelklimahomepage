@@ -119,7 +119,7 @@ export const legalContent: Record<
             title: '4. Kontaktaufnahme und Buchungsanfragen',
             html: [
               'Wenn Sie uns per E-Mail, Telefon oder über das Anfrageformular kontaktieren, verarbeiten wir Ihre Angaben (z. B. Name, Kontaktdaten, Reisezeitraum, Personenanzahl), um Ihre Anfrage zu beantworten und eine Buchung abzuwickeln (Art. 6 Abs. 1 lit. b DSGVO).',
-              'Das Anfrageformular speichert oder überträgt keine Daten über diese Website: Beim Absenden wird lediglich eine E-Mail vorbereitet, die Sie selbst über den von Ihnen gewählten Dienst an uns senden (z. B. Ihr E-Mail-Programm, Gmail oder Outlook.com). Wählen Sie Gmail oder Outlook.com, gelten dort die Datenschutzbestimmungen des jeweiligen Anbieters (Google bzw. Microsoft).',
+              'Beim Absenden des Anfrageformulars werden Ihre Angaben über eine Funktion unseres Hosters Vercel (Region Frankfurt) und unseren E-Mail-Anbieter A1 Telekom Austria per E-Mail an unser Postfach gesendet. Auf der Website selbst werden die Angaben nicht gespeichert. Sollte das Senden fehlschlagen, können Sie die Anfrage selbst per E-Mail schicken (z. B. über Gmail oder Outlook.com); dann gelten die Datenschutzbestimmungen des jeweiligen Anbieters (Google bzw. Microsoft).',
               'Die Daten werden gelöscht, sobald sie nicht mehr benötigt werden. Buchungs- und Rechnungsdaten bewahren wir entsprechend den gesetzlichen Aufbewahrungspflichten (§ 132 BAO, 7 Jahre) auf.',
             ],
           },
@@ -232,7 +232,7 @@ export const legalContent: Record<
             title: '4. Contact and booking requests',
             html: [
               'If you contact us by email, phone or the enquiry form, we process the details you provide (e.g. name, contact details, travel dates, number of guests) to answer your request and handle your booking (Art. 6(1)(b) GDPR).',
-              'The enquiry form does not store or transmit any data via this website: submitting it only prepares an email that you send to us yourself using the service you choose (e.g. your email program, Gmail or Outlook.com). If you choose Gmail or Outlook.com, the privacy policy of that provider (Google or Microsoft) applies.',
+              'When you submit the enquiry form, your details are sent by email to our mailbox via a function of our host Vercel (Frankfurt region) and our email provider A1 Telekom Austria. The details are not stored on the website itself. If sending fails, you can email the enquiry yourself (e.g. via Gmail or Outlook.com); in that case the privacy policy of that provider (Google or Microsoft) applies.',
               'The data is deleted once it is no longer needed. Booking and invoice data is kept for the statutory retention period (§ 132 Austrian Federal Fiscal Code, 7 years).',
             ],
           },
@@ -345,7 +345,7 @@ export const legalContent: Record<
             title: '4. Contatti e richieste di prenotazione',
             html: [
               'Se ci contatti via e-mail, telefono o tramite il modulo di richiesta, trattiamo i dati che ci fornisci (ad es. nome, recapiti, periodo del soggiorno, numero di persone) per rispondere alla tua richiesta e gestire la prenotazione (art. 6, par. 1, lett. b GDPR).',
-              'Il modulo di richiesta non salva né trasmette dati tramite questo sito: inviandolo viene soltanto preparata un’e-mail che ci invii tu stesso tramite il servizio che scegli (ad es. il tuo programma di posta, Gmail o Outlook.com). Se scegli Gmail o Outlook.com, si applica l’informativa privacy del rispettivo fornitore (Google o Microsoft).',
+              'Quando invii il modulo di richiesta, i tuoi dati vengono inviati via e-mail alla nostra casella di posta tramite una funzione del nostro hosting Vercel (regione Francoforte) e il nostro fornitore di posta A1 Telekom Austria. I dati non vengono salvati sul sito stesso. Se l’invio non riesce, puoi inviarci la richiesta tu stesso via e-mail (ad es. con Gmail o Outlook.com); in tal caso si applica l’informativa privacy del rispettivo fornitore (Google o Microsoft).',
               'I dati vengono cancellati quando non sono più necessari. I dati di prenotazione e fatturazione sono conservati per il periodo previsto dalla legge (§ 132 BAO, 7 anni).',
             ],
           },

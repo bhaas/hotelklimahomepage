@@ -28,6 +28,8 @@ interface BookingContent {
     message: string;
     optional: string;
     submit: string;
+    sending: string;
+    success: string;
     note: string;
     privacyLabel: string;
     dateError: string;
@@ -36,7 +38,6 @@ interface BookingContent {
       intro: string;
       gmail: string;
       outlook: string;
-      app: string;
       copy: string;
       copied: string;
     };
@@ -79,16 +80,17 @@ export const bookingContent: Record<Locale, BookingContent> = {
       boards: ['Halbpension', 'Übernachtung mit Frühstück'],
       message: 'Nachricht',
       optional: 'optional',
-      submit: 'Anfrage vorbereiten',
-      note: 'Nach dem Absenden wählen Sie, wie Sie die fertige Anfrage verschicken möchten – z. B. über Gmail, Outlook.com oder Ihr E-Mail-Programm. Die Daten werden nicht auf dieser Website gespeichert.',
+      submit: 'Anfrage senden',
+      sending: 'Wird gesendet …',
+      success: 'Vielen Dank! Ihre Anfrage ist bei uns angekommen – wir melden uns rasch mit einem persönlichen Angebot.',
+      note: 'Ihre Anfrage wird per E-Mail direkt an uns gesendet und nicht auf dieser Website gespeichert.',
       privacyLabel: 'Datenschutzerklärung',
       dateError: 'Die Abreise muss nach der Anreise liegen.',
       send: {
-        title: 'Ihre Anfrage ist bereit',
-        intro: 'Wie möchten Sie die Anfrage an haas@hotel-klima.com senden?',
+        title: 'Die Anfrage konnte leider nicht gesendet werden',
+        intro: 'Bitte senden Sie sie auf einem dieser Wege an haas@hotel-klima.com:',
         gmail: 'In Gmail öffnen',
         outlook: 'In Outlook.com öffnen',
-        app: 'E-Mail-Programm öffnen',
         copy: 'Text kopieren',
         copied: 'Kopiert! Fügen Sie den Text in eine E-Mail an haas@hotel-klima.com ein.',
       },
@@ -133,16 +135,17 @@ export const bookingContent: Record<Locale, BookingContent> = {
       boards: ['Half board', 'Bed and breakfast'],
       message: 'Message',
       optional: 'optional',
-      submit: 'Prepare enquiry',
-      note: 'After submitting, choose how to send the prepared enquiry – e.g. via Gmail, Outlook.com or your email program. No data is stored on this website.',
+      submit: 'Send enquiry',
+      sending: 'Sending …',
+      success: 'Thank you! We have received your enquiry and will get back to you quickly with a personal offer.',
+      note: 'Your enquiry is sent to us directly by email and is not stored on this website.',
       privacyLabel: 'Privacy policy',
       dateError: 'Departure must be after arrival.',
       send: {
-        title: 'Your enquiry is ready',
-        intro: 'How would you like to send it to haas@hotel-klima.com?',
+        title: 'Unfortunately the enquiry could not be sent',
+        intro: 'Please send it to haas@hotel-klima.com in one of these ways:',
         gmail: 'Open in Gmail',
         outlook: 'Open in Outlook.com',
-        app: 'Open email program',
         copy: 'Copy text',
         copied: 'Copied! Paste the text into an email to haas@hotel-klima.com.',
       },
@@ -187,16 +190,17 @@ export const bookingContent: Record<Locale, BookingContent> = {
       boards: ['Mezza pensione', 'Pernottamento e colazione'],
       message: 'Messaggio',
       optional: 'facoltativo',
-      submit: 'Prepara la richiesta',
-      note: 'Dopo l’invio scegli come spedire la richiesta già compilata – ad es. con Gmail, Outlook.com o il tuo programma di posta. I dati non vengono salvati su questo sito.',
+      submit: 'Invia la richiesta',
+      sending: 'Invio in corso …',
+      success: 'Grazie! Abbiamo ricevuto la tua richiesta e ti risponderemo rapidamente con un’offerta personale.',
+      note: 'La tua richiesta ci viene inviata direttamente via e-mail e non viene salvata su questo sito.',
       privacyLabel: 'Informativa sulla privacy',
       dateError: 'La partenza deve essere successiva all’arrivo.',
       send: {
-        title: 'La tua richiesta è pronta',
-        intro: 'Come vuoi inviarla a haas@hotel-klima.com?',
+        title: 'Purtroppo non è stato possibile inviare la richiesta',
+        intro: 'Inviala a haas@hotel-klima.com in uno di questi modi:',
         gmail: 'Apri in Gmail',
         outlook: 'Apri in Outlook.com',
-        app: 'Apri il programma di posta',
         copy: 'Copia il testo',
         copied: 'Copiato! Incolla il testo in un’e-mail a haas@hotel-klima.com.',
       },

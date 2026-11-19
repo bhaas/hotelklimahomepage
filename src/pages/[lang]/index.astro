@@ -566,10 +566,19 @@ const structuredData = {
                   </label>
                 </div>
 
-                <button type="submit" class="button booking-form__submit">{booking.form.submit}</button>
+                <label class="booking-form__trap" aria-hidden="true">
+                  Website
+                  <input name="website" tabindex="-1" autocomplete="off" data-role="trap" />
+                </label>
+
+                <button type="submit" class="button booking-form__submit" data-sending={booking.form.sending}>{booking.form.submit}</button>
                 <p class="booking-form__note">
                   {booking.form.note} <a href={legalPath(lang, 'privacy')}>{booking.form.privacyLabel}</a>
                 </p>
+
+                <div class="booking-send booking-send--success" data-role="success" hidden tabindex="-1" aria-live="polite">
+                  <p>{booking.form.success}</p>
+                </div>
 
                 <div class="booking-send" data-role="send" hidden tabindex="-1" aria-live="polite">
                   <h4>{booking.form.send.title}</h4>
@@ -577,7 +586,6 @@ const structuredData = {
                   <div class="booking-send__actions">
                     <a class="button" href="#anfrage" data-send="gmail" target="_blank" rel="noopener">{booking.form.send.gmail}</a>
                     <a class="button" href="#anfrage" data-send="outlook" target="_blank" rel="noopener">{booking.form.send.outlook}</a>
-                    <a class="button" href="#anfrage" data-send="app">{booking.form.send.app}</a>
                     <button type="button" class="button" data-send="copy">{booking.form.send.copy}</button>
                   </div>
                   <p class="booking-send__copied" data-role="copied" hidden>{booking.form.send.copied}</p>
@@ -654,8 +662,15 @@ const structuredData = {
       departure.addEventListener('change', () => departure.setCustomValidity(''));
     }
 
-    form.addEventListener('submit', (event) => {
+    const startedAt = Date.now();
+    const submit = form.querySelector<HTMLButtonElement>('.booking-form__submit');
+    const success = form.querySelector<HTMLElement>('[data-role="success"]');
+    const panel = form.querySelector<HTMLElement>('[data-role="send"]');
+    let sending = false;
+
+    form.addEventListener('submit', async (event) => {
       event.preventDefault();
+      if (sending) return;
       if (arrival && departure && arrival.value && departure.value && departure.value <= arrival.value) {
         departure.setCustomValidity(form.dataset.dateError ?? '');
         departure.reportValidity();
@@ -664,20 +679,68 @@ const structuredData = {
       if (!form.reportValidity()) return;
 
       const formatDate = (value: string) => value.split('-').reverse().join('.');
-      const lines = [...new FormData(form).entries()]
-        .filter(([, value]) => String(value).trim() !== '')
+      const fields = [...new FormData(form).entries()]
+        .filter(([key, value]) => key !== 'website' && String(value).trim() !== '')
         .map(([key, value]) => {
           const input = form.elements.namedItem(key) as HTMLInputElement | null;
-          return `${key}: ${input?.type === 'date' ? formatDate(String(value)) : value}`;
+          return [key, input?.type === 'date' ? formatDate(String(value)) : String(value)];
         });
       const subject = `${form.dataset.subject} ${arrival ? formatDate(arrival.value) : ''}–${departure ? formatDate(departure.value) : ''}`;
-      const body = lines.join('\n');
+      const body = fields.map(([key, value]) => `${key}: ${value}`).join('\n');
       const to = form.dataset.email ?? '';
+      const email = form.querySelector<HTMLInputElement>('input[type="email"]')?.value ?? '';
+      const name = form.querySelector<HTMLInputElement>('input[autocomplete="name"]')?.value ?? '';
+      const trap = form.querySelector<HTMLInputElement>('[data-role="trap"]')?.value ?? '';
+
+      if (success) success.hidden = true;
+      if (panel) panel.hidden = true;
+      sending = true;
+      const label = submit?.textContent ?? '';
+      if (submit) {
+        submit.disabled = true;
+        submit.textContent = submit.dataset.sending ?? label;
+      }
+      let sent = false;
+      try {
+        const response = await fetch('/api/inquiry', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name,
+            email,
+            subject,
+            fields,
+            lang: document.documentElement.lang,
+            website: trap,
+            elapsedMs: Date.now() - startedAt,
+          }),
+        });
+        sent = response.ok;
+      } catch {
+        sent = false;
+      } finally {
+        sending = false;
+        if (submit) {
+          submit.disabled = false;
+          submit.textContent = label;
+        }
+      }
+
+      if (sent) {
+        form.reset();
+        if (success) {
+          success.hidden = false;
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          success.focus({ preventScroll: true });
+        }
+        return;
+      }
+
+      // Sending failed: let the guest send the prepared text with their own email service.
       const q = (value: string) => encodeURIComponent(value);
       const links: Record<string, string> = {
         gmail: `https://mail.google.com/mail/?view=cm&fs=1&to=${q(to)}&su=${q(subject)}&body=${q(body)}`,
         outlook: `https://outlook.live.com/mail/0/deeplink/compose?to=${q(to)}&subject=${q(subject)}&body=${q(body)}`,
-        app: `mailto:${to}?subject=${q(subject)}&body=${q(body)}`,
       };
       form.querySelectorAll<HTMLAnchorElement>('a[data-send]').forEach((link) => {
         link.href = links[link.dataset.send ?? ''] ?? '#';
@@ -696,7 +759,6 @@ const structuredData = {
         };
       }
       if (copied) copied.hidden = true;
-      const panel = form.querySelector<HTMLElement>('[data-role="send"]');
       if (panel) {
         panel.hidden = false;
         panel.scrollIntoView({ behavior: 'smooth', block: 'center' });

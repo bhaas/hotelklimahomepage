@@ -2,7 +2,7 @@
 // Required environment variables (Vercel → Project → Settings → Environment Variables):
 //   SMTP_USER, SMTP_PASS              mailbox login (e.g. haas@hotel-klima.com)
 // Optional:
-//   SMTP_HOST (smtp.a1.net), SMTP_PORT (587; 465 = implicit TLS)
+//   SMTP_HOST (bsmtp.a1.net = A1 Business Mail), SMTP_PORT (587; 465 = implicit TLS)
 //   INQUIRY_TO (haas@hotel-klima.com)  recipient
 //   INQUIRY_FROM (SMTP_USER)           sender; must be an address of the hotel domain (SPF)
 import nodemailer from 'nodemailer';
@@ -55,7 +55,7 @@ export function buildInquiry(body) {
 export function createTransport(env = process.env) {
   const port = Number(env.SMTP_PORT || 587);
   return nodemailer.createTransport({
-    host: env.SMTP_HOST || 'smtp.a1.net',
+    host: env.SMTP_HOST || 'bsmtp.a1.net',
     port,
     secure: port === 465,
     requireTLS: port !== 465,

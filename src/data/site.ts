@@ -123,7 +123,7 @@ export const siteContent = {
     rooms: {
       title: 'Zimmer zum Abschalten',
       text:
-        'Die Zimmer sind gemütlich im Tiroler Stil gestaltet, teilweise modernisiert und für entspannte Urlaubstage ausgestattet. Viele Böden, Waschtische und technische Details wurden erneuert – und alle Zimmer haben neue, besonders bequeme Boxspringbetten in angenehmer Höhe.',
+        'Die Zimmer sind gemütlich im Tiroler Stil gestaltet und für entspannte Urlaubstage ausgestattet. Viele Böden, Waschtische und technische Details wurden erneuert – und alle Zimmer haben neue, besonders bequeme Boxspringbetten in angenehmer Höhe.',
       bullets: [
         'Neue, hohe Boxspringbetten in allen Zimmern',
         'Betten im Doppelzimmer auf Wunsch getrennt aufstellbar',

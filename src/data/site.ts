@@ -121,7 +121,7 @@ export const siteContent = {
       ],
     },
     rooms: {
-      title: 'Zimmer zum Abschalten',
+      title: 'Zimmer mit Balkon und Bergblick',
       text:
         'Die Zimmer sind gemütlich im Tiroler Stil gestaltet und für entspannte Urlaubstage ausgestattet. Viele Böden, Waschtische und technische Details wurden erneuert – und alle Zimmer haben neue, besonders bequeme Boxspringbetten in angenehmer Höhe.',
       bullets: [
@@ -343,7 +343,7 @@ export const siteContent = {
       ],
     },
     rooms: {
-      title: 'Rooms designed for downtime',
+      title: 'Rooms with balcony and mountain views',
       text:
         'Rooms combine Tyrolean warmth with practical comfort. Several surfaces, washbasins and technical details have already been renewed to keep the stay relaxed and easy – and every room now has new, extra-comfortable box-spring beds at a pleasant height.',
       bullets: [
@@ -565,7 +565,7 @@ export const siteContent = {
       ],
     },
     rooms: {
-      title: 'Camere pensate per stare bene',
+      title: 'Camere con balcone e vista sui monti',
       text:
         'Le camere uniscono calore tirolese e comfort pratico. Pavimenti, lavabi e diversi dettagli tecnici sono già stati rinnovati per rendere il soggiorno più piacevole – e tutte le camere dispongono di nuovi letti boxspring alti e particolarmente comodi.',
       bullets: [
